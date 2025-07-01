@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mes Projets</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    html, body { 
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      background-image: url(fond-d-illustration-de-texture-de-superposition-de-poussiere-doree.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #d4af37;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-right: 0.5rem;
+      color: #d4af37;
+      border: 1px solid #d4af37;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    nav a[href="projets.html"] {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    .brand {
+      font-weight: 700;
+      text-align: right;
+      line-height: 1.2;
+    }
+
+    main {
+      flex: 1 0 auto;
+      max-width: 900px;
+      margin: 5rem auto;
+      padding: 0;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .project {
+      margin-top: 2rem;
+      border: 1px solid #d4af37;
+      padding: 1.5rem;
+      border-radius: 20px;
+      position: relative;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .arrow-link {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      font-size: 1.8rem;
+      color: #d4af37;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .arrow-link:hover {
+      color: #fff;
+    }
+
+    .synthese-link {
+      text-align: right;
+      margin: 2rem 1rem 0 0;
+    }
+
+    .synthese-link a {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 10px 15px;
+      border-radius: 10px;
+      transition: color 0.3s, background 0.3s;
+    }
+
+    .synthese-link a:hover {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    footer {
+      flex-shrink: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #d4af37;
+      padding: 2rem 1rem;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-center {
+      text-align: center;
+    }
+
+    .footer-center strong {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-center a {
+      display: block;
+      margin: 0.25rem 0;
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer-center a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-right a {
+      display: block;
+      color: #d4af37;
+      text-decoration: none;
+      margin: 0.25rem 0;
+    }
+
+    .footer-right a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      main {
+        margin: 2rem 1rem;
+      }
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-left,
+      .footer-center,
+      .footer-right {
+        text-align: center;
+        min-width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      LOUKA<br />LAVENIR
+    </div>
+    <nav>
+      <a href="index.html">ACCUEIL</a>
+      <a href="apropos.html">À PROPOS DE MOI</a>
+      <a href="projets.html">MES PROJETS</a>
+      <a href="veille.html">VEILLE TECHNOLOGIQUE</a>
+      <a href="mecontacter.html">ME CONTACTER</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Mes Projets</h1>
+
+    <div class="project">
+      <h2>Création d'un Intranet pour la mairie de Mandelieu la-Napoule</h2>
+      <p>Avec l’aide d’un collègue, j’ai conçu un nouvel intranet pour la mairie afin de remplacer l’ancien système, devenu obsolète.</p>
+      <br><img src="logo mandelieu bleu.jpg" alt="" style="max-width:20%; height:auto; margin-top: 1rem; display: block; margin: 1rem auto; height: auto;">
+      <a href="Intranet.html" class="arrow-link" aria-label="Voir le projet Intranet">
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="project">
+      <h2>Déploiement d’un serveur de messagerie local</h2>
+      <p>J’ai conçu et déployé un serveur de messagerie en Python sur une machine virtuelle Debian, accessible en réseau local. Le projet incluait l’ajout de fonctionnalités comme les canaux de discussion, les messages privés, un menu d’administration, ainsi que la mise en place d’outils de sécurité et de journalisation.</p>
+      <p>Compétences développées : Déploiement de services réseau, Programmation Python, Sécurisation de serveur (fail2ban, logs), Autonomie, Tests d’interopérabilité.</p>
+      <a href="https://github.com/zedkabc/classcord-server" class="arrow-link" aria-label="Voir le projet classcord-server">
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <!-- Bouton Tableau de synthèse -->
+    <div class="synthese-link">
+      <a href="Tableau de synthèse.xlsx" target="_blank">📊 Tableau de synthèse</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-left">
+      <p>© 2025 Louka Lavenir - Tous droits réservés</p>
+    </div>
+    <div class="footer-center">
+      <strong>Navigation :</strong>
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">À propos de moi</a>
+      <a href="projets.html">Mes projets</a>
+      <a href="veille.html">Veille technologique</a>
+      <a href="mecontacter.html">Me contacter</a>
+    </div>
+    <div class="footer-right">
+      <a href="mentions.html">Mentions légales</a>
+      <a href="politique.html">Politique de confidentialité</a>
+    </div>
+  </footer>
+
+</body>
+</html>

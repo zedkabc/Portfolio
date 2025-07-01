@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veille Technologique</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0; 
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      background-image: url('arriere-plan-brillant-noir-et.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #d4af37;
+      position: relative;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* opacité */
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    header, main {
+      position: relative;
+      z-index: 1; 
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-right: 0.5rem;
+      color: #d4af37;
+      border: 1px solid #d4af37;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    nav a[href="veille.html"] {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    .brand {
+      font-weight: 700;
+      text-align: right;
+      line-height: 1.2;
+    }
+
+    .content-wrapper {
+      max-width: 1300px;
+      margin: 2rem auto;
+      background-color: rgba(0, 0, 0, 0.7); /* Fond noir transparent */
+      border-radius: 12px;
+      padding: 2rem;
+      flex-grow: 1;
+    }
+
+    main {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      text-align: left;
+      margin: 0 auto 1rem auto;
+      max-width: 800px;
+      padding-left: 1.2rem;
+    }
+
+    li {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      margin-bottom: 0.4rem;
+    }
+
+    li a {
+      color: #d4af37;       
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    li a:hover {
+      color: #fff;          /* blanc au survol */
+      text-decoration: underline;
+    }
+
+
+    /* Footer styles */
+    footer {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #d4af37;
+      padding: 2rem 1rem;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: auto;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-center {
+      text-align: center;
+    }
+
+    .footer-center a {
+      display: block;
+      margin: 0.25rem 0;
+      color: #d3a920;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer-center a:hover {
+      text-decoration: underline;
+      color: #ffffff;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-right a {
+      display: block;
+      color: #d4af37;
+      text-decoration: none;
+      margin: 0.25rem 0;
+    }
+
+    .footer-right a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-left,
+      .footer-center,
+      .footer-right {
+        text-align: center;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <header>
+    <div class="brand">
+      LOUKA<br />LAVENIR
+    </div>
+    <nav>
+      <a href="index.html">ACCUEIL</a>
+      <a href="apropos.html">À PROPOS DE MOI</a>
+      <a href="projets.html">MES PROJETS</a>
+      <a href="veille.html">VEILLE TECHNOLOGIQUE</a>
+      <a href="mecontacter.html">ME CONTACTER</a>
+    </nav>
+  </header>
+
+  <div class="content-wrapper">
+    <main>
+      <h1>Veille Technologique</h1>
+
+      <h2>Sujet : Quel est le futur de la réalité virtuelle ?</h2>  
+      <h2>Histoire de la réalité virtuelle</h2>
+
+      <h3>1950–1970</h3>
+      <p>
+        En 1956, Morton Heilig invente le <em>Sensorama</em>, un simulateur multisensoriel. Dans les années 60, les premières applications militaires apparaissent, notamment un simulateur de vol développé par Thomas A. Furness III.
+      </p>
+
+      <h3>1970–1990</h3>
+      <p>
+        L’université de l’Utah développe un des premiers casques VR. Le MIT propose une simulation de la ville d’Aspen. Le DataGlove (1982) permet de détecter les mouvements de la main. Le terme "réalité virtuelle" est popularisé par Jaron Lanier dans les années 80.
+      </p>
+
+      <h3>1990–2000</h3>
+      <p>
+        Sega développe le Sega VR, Apple lance QuickTime VR, et Virtuality crée les premières bornes d’arcade multijoueur. La VR reste cependant coûteuse et limitée aux usages professionnels.
+      </p>
+
+      <h3>2000 à aujourd’hui</h3>
+      <p>
+        Google introduit Street View en 2007. En 2014, Facebook rachète Oculus VR. Entre 2016 et 2020, des casques comme le HTC Vive, Oculus Rift ou PlayStation VR sont lancés, rendant la VR plus accessible. En 2023, Apple entre sur le marché avec le Vision Pro.
+      </p>
+
+      <h2>Utilités et applications</h2>
+      <p>
+        La réalité virtuelle n’est pas uniquement destinée aux jeux vidéo. Elle est utilisée dans :
+      </p>
+      <ul>
+        <li>L’architecture : pour visualiser des projets en 3D avant construction.</li>
+        <li>La santé : pour la rééducation, les phobies, ou la formation médicale.</li>
+        <li>L’éducation : pour l’apprentissage immersif et interactif.</li>
+        <li>La simulation professionnelle : dans l’armée, l’aviation ou l’industrie.</li>
+      </ul>
+      <p>
+        Là où le réel est risqué, coûteux ou inaccessible, la VR permet de tester, former ou explorer en toute sécurité.
+      </p>
+
+      <h2>Concurrence et équipements</h2>
+      <p>
+        Le marché VR est très concurrentiel. Oculus (Meta) domine historiquement, suivi de HTC (Vive), Sony (PlayStation VR), et désormais Apple avec le Vision Pro.
+      </p>
+      <p>
+        Attention à ne pas confondre avec la réalité augmentée (AR) : des appareils comme l’<strong>Hololens</strong> de Microsoft projettent des hologrammes dans le monde réel, alors que la VR isole totalement l’utilisateur dans un monde virtuel.
+      </p>
+
+      <h2>La réalité virtuelle dans la médecine</h2>
+      <p>
+        La réalité virtuelle joue un rôle croissant dans le domaine médical. Elle permet aux professionnels de santé de s'entraîner à des procédures complexes via des simulateurs immersifs, sans risque pour des patients réels. Grâce à la VR, les étudiants en médecine peuvent explorer l’anatomie humaine en 3D ou participer à des scénarios d’urgence simulés.
+      </p>
+      <p>
+        Elle est également utilisée dans la prise en charge de patients souffrant de douleurs chroniques, d’anxiété ou de troubles post-traumatiques. Par exemple, certaines cliniques proposent des expériences immersives pour réduire la douleur durant les soins, ou pour traiter des phobies grâce à l'exposition contrôlée dans un environnement virtuel.
+      </p>
+      <p>
+        Des solutions comme <strong>AppliedVR</strong> ou <strong>Karuna Labs</strong> sont déjà utilisées dans des hôpitaux pour la rééducation ou la gestion de la douleur. La téléchirurgie et les consultations immersives, encore à l’état expérimental, pourraient également devenir des standards dans le futur.
+      </p>
+
+      <h2>Le futur de la VR</h2>
+      <ul>
+        <li><strong>Miniaturisation :</strong> des casques plus petits, légers, et ergonomiques pour le grand public.</li>
+        <li><strong>Plus de sens :</strong> retour haptique, simulation de l’odorat, vent ou température.</li>
+        <li><strong>Accessibilité :</strong> baisse des coûts et démocratisation via les smartphones.</li>
+        <li><strong>Enseignement :</strong> la formation immersive pourrait remplacer les salles de classe traditionnelles dans certains domaines.</li>
+        <li><strong>Réalité mixte :</strong> fusion de la VR et AR pour enrichir l'interaction avec l’environnement réel.</li>
+      </ul>
+      <p>
+        Toutefois, une VR trop immersive pourrait poser des problèmes psychologiques : confusion entre réel et virtuel, fatigue émotionnelle, voire dépendance.
+      </p>
+
+     <h2>Outils utilisés pour la veille</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-bottom: 3rem;">
+
+  <!-- Histoire de la VR -->
+  <div style="width: 280px; background: #111; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+    <a href="https://www.irwino.com/histoire-de-la-realite-virtuelle/" target="_blank" style="color: inherit; text-decoration: none;">
+      <img src="image histoire vr.webp" alt="Histoire de la réalité virtuelle" style="width: 100%; height: 150px; object-fit: cover;">
+      <div style="padding: 1rem;">
+        <h3 style="font-size: 1.3rem; color: #d4af37;">Irwino.com</h3>
+        <p style="font-size: 0.9rem; color: #ccc;">L’histoire de la réalité virtuelle : Des années 50 à nos jours.</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Vision Pro -->
+  <div style="width: 280px; background: #111; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+    <a href="https://www.augmented-reality.fr/2023/07/apple-vision-pro-pivot-de-la-realite-augmentee-1-3-naming-et-technique/" target="_blank" style="color: inherit; text-decoration: none;">
+      <img src="image article vision pro.webp" alt="Apple Vision Pro" style="width: 100%; height: 150px; object-fit: cover;">
+      <div style="padding: 1rem;">
+        <h3 style="font-size: 1.3rem; color: #d4af37;">Augmented-Reality.fr</h3>
+        <p style="font-size: 0.9rem; color: #ccc;">Apple Vision Pro : pivot de la réalité augmentée ?</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Médecine et VR -->
+  <div style="width: 280px; background: #111; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+    <a href="https://reality.fr/blog/sante-medecine-realite-virtuelle/" target="_blank" style="color: inherit; text-decoration: none;">
+      <img src="image medecine vr.jpg" alt="VR en médecine" style="width: 100%; height: 150px; object-fit: cover;">
+      <div style="padding: 1rem;">
+        <h3 style="font-size: 1.3rem; color: #d4af37;">Reality.fr</h3>
+        <p style="font-size: 0.9rem; color: #ccc;">La Réalité Virtuelle dans le domaine de la santé.</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Le futur -->
+  <div style="width: 280px; background: #111; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+    <a href="https://www.realite-virtuelle.com/le-futur-de-la-vr/" target="_blank" style="color: inherit; text-decoration: none;">
+      <img src="image futur vr.webp" alt="Wikipédia VR" style="width: 100%; height: 150px; object-fit: contain; background-color: #fff;">
+      <div style="padding: 1rem;">
+        <h3 style="font-size: 1.3rem; color: #d4af37;">Réalité-Virtuelle.com</h3>
+        <p style="font-size: 0.9rem; color: #ccc;">Le futur de la VR : que faut-il espérer ?</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- LinkedIn / veille pro -->
+  <div style="width: 280px; background: #111; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+    <a href="https://www.linkedin.com/search/results/all/?keywords=r%C3%A9alit%C3%A9%20virtuelle&origin=GLOBAL_SEARCH_HEADER&sid=%3Bog" target="_blank" style="color: inherit; text-decoration: none;">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 100%; height: 150px; object-fit: contain; background-color: #fff;">
+      <div style="padding: 1rem;">
+        <h3 style="font-size: 1.3rem; color: #d4af37;">LinkedIn</h3>
+        <p style="font-size: 0.9rem; color: #ccc;">Suivi d’actualités technologiques et d’experts en VR sur LinkedIn.</p>
+      </div>
+    </a>
+  </div>
+
+</div>
+
+
+
+      <h2>Liens externes</h2>
+      <ul>
+        <li><a href="https://www.meta.com/fr/quest/">Site officiel Meta Quest</a></li>
+        <li><a href="https://www.apple.com/fr/vision-pro/">Apple Vision Pro</a></li>
+        <li><a href="https://fr.wikipedia.org/wiki/R%C3%A9alit%C3%A9_virtuelle">Article Wikipédia réalité virtuelle</a></li>
+        <li><a href="https://www.casques-vr.com/">Casques-VR.com</a></li>
+      </ul>
+
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <p>© 2025 Louka Lavenir - Tous droits réservés</p>
+    </div>
+    <div class="footer-center">
+      <strong>Navigation :</strong>
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">À propos de moi</a>
+      <a href="projets.html">Mes projets</a>
+      <a href="veille.html">Veille technologique</a>
+      <a href="mecontacter.html">Me contacter</a>
+    </div>
+    <div class="footer-right">
+      <a href="mentions.html">Mentions légales</a>
+      <a href="politique.html">Politique de confidentialité</a>
+    </div>
+  </footer>
+
+</body>
+</html>

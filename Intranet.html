@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Intranet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      background: url('fond-d-illustration-de-texture-de-superposition-de-poussiere-doree.jpg') center/cover no-repeat fixed;
+      color: #d4af37;
+      overflow-x: hidden;
+    }
+
+    .page-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand {
+      font-weight: 700;
+      text-align: right;
+      line-height: 1.2;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-right: 0.5rem;
+      color: #d4af37;
+      background-color: transparent;
+      border: 1px solid #d4af37;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    nav a[href="intranet.html"] {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    .content-wrapper {
+      max-width: 1500px;
+      margin: 4rem auto 5rem auto;
+      padding: 2rem 3rem;
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 12px;
+      position: relative;
+      z-index: 1;
+      color: #d4af37;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+      margin-bottom: 1rem;
+      list-style-type: disc;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      flex-shrink: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #d4af37;
+      padding: 2rem 1rem;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-center {
+      text-align: center;
+    }
+
+    .footer-center strong {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-center a {
+      display: block;
+      margin: 0.25rem 0;
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer-center a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-right a {
+      display: block;
+      color: #d4af37;
+      text-decoration: none;
+      margin: 0.25rem 0;
+    }
+
+    .footer-right a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      main {
+        margin: 2rem 1rem;
+      }
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-left,
+      .footer-center,
+      .footer-right {
+        text-align: center;
+        min-width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <header>
+      <div class="brand">
+        LOUKA<br />LAVENIR
+      </div>
+      <nav>
+        <a href="index.html">ACCUEIL</a>
+        <a href="apropos.html">À PROPOS DE MOI</a>
+        <a href="projets.html">MES PROJETS</a>
+        <a href="veille.html">VEILLE TECHNOLOGIQUE</a>
+        <a href="mecontacter.html">ME CONTACTER</a>
+      </nav>
+    </header>
+
+    <div class="content-wrapper">
+      <h1>Projet : Nouvel intranet pour la Mairie de Mandelieu-la-Napoule</h1>
+
+      <h2>Définition (besoin)</h2>
+      <p>
+        La DSIT avait pour projet en 2025 l’implémentation d’un nouvel intranet au sein de la collectivité en raison de l’obsolescence du serveur actuel, qui ne répond plus aux exigences en matière de cybersécurité.
+      </p>
+      <p>
+        L’objectif étant d’opter vers un intranet moderne, sécurisée et évolutive avec une plateforme adaptée (open source ou commerciale) en fonction des besoins, du budget et de la sécurité.
+      </p>
+      <p>
+        Le SI Métiers m’a confié la mission de mise en place du nouvel intranet.
+      </p>
+
+      <h2>Étude d’opportunité et proposition</h2>
+      <ul>
+        <li>Mon choix s’est porté sur WordPress car l’utilisation est simple même pour ceux qui ne sont pas experts en développement web. Cela facilite la gestion quotidienne du contenu et la mise à jour de l’intranet par des utilisateurs non techniques.</li>
+        <li>Flexibilité et personnalisation : WordPress permet d’adapter l’intranet aux besoins spécifiques de votre organisation, qu’il s’agisse de gestion de documents, de forums, de calendriers ou d’autres fonctionnalités collaboratives.</li>
+        <li>Coût maîtrisé : WordPress est une plateforme open source, ce qui signifie qu’elle est gratuite à l’achat.</li>
+        <li>Communauté et support : La communauté WordPress est très active, ce qui garantit un accès à une multitude de ressources, de mises à jour régulières, et de solutions aux éventuels problèmes techniques.</li>
+        <li>Sécurité et évolutivité : Bien que la sécurité doive être une priorité, WordPress propose de nombreux plugins et bonnes pratiques pour renforcer la sécurité. De plus, la plateforme peut évoluer avec l’organisation de la commune en ajoutant des fonctionnalités ou en augmentant la capacité selon les besoins.</li>
+        <li>Intégration avec d’autres outils : WordPress peut facilement s’intégrer avec d’autres systèmes ou outils que vous utilisez déjà, comme des CRM, des outils de messagerie ou des plateformes de stockage.</li>
+      </ul>
+
+      <h2>Mise en place</h2>
+
+      <h3>Analyse des besoins</h3>
+      <p>
+        Après la réunion de lancement avec l’équipe projet (Cabinet du Maire, Directeur Générale des Services, Direction de la communication, DSIT et SI Métiers) afin de bien comprendre les attentes et enjeux, j’ai recensé dans un premier temps l’existant de l’ancien intranet et rencontré les services pour identifier les besoins et les attentes. Quelles informations doivent être reprises ? Sont-elles toujours pertinentes et à jour ? …
+      </p>
+      <p>
+        Après cet audit, nous nous sommes réunis à nouveau avec l’équipe projet. J’ai expliqué le choix de la solution WordPress et rédigé un cahier des charges qu’ils ont validés.
+      </p>
+      <p>
+        À la demande du service communication, le groupe projet a suivi une formation WordPress (Administrer son site). Le but étant d’être totalement autonome dans la gestion et la mise à jour de son site. Je ne sais pas si tu veux détailler le contenu.
+      </p>
+      <p>
+        Le coût du projet : 1 750€ pour 2 jours de formation WordPress
+      </p>
+      <p>
+        Le planning :
+        <img src="planning intra.png" style="max-width: 100%; height: auto;" alt="Planning Intranet">
+      </p>
+
+      <h2>Développement</h2>
+      <p>
+          J’ai profité de ce projet pour me former à l’outil WordPress, ce qui m’a permis de mieux comprendre ses fonctionnalités et de l’exploiter efficacement afin d’améliorer la visibilité et l’ergonomie du nouvel intranet.
+      </p>
+
+      <p>
+         J’ai commencé par transférer l’ensemble des documents présents sur l’ancien intranet vers la nouvelle plateforme. Ce travail de migration a nécessité une organisation rigoureuse pour garantir l’accessibilité et la cohérence des informations.
+      </p>
+
+      <p>
+         Ensuite, j’ai enrichi le site avec plusieurs modules essentiels :
+      </p>
+      <ul>
+        <li>
+          Un <strong>annuaire</strong> du personnel, permettant à chaque agent de retrouver facilement les coordonnées et les informations utiles des collègues.
+         <br><img src="annuaire intranet.png" alt="Aperçu de l'annuaire" style="max-width:50%; height:auto; margin-top: 1rem; display: block; margin: 1rem auto; height: auto;">
+        </li>
+        <li>
+         Un <strong>calendrier</strong> partagé pour la publication des événements internes, des réunions ou des actualités des services.
+         <br><img src="agenda intranet.png" alt="Aperçu de l'agenda" style="max-width:50%; height:auto; margin-top: 1rem; display: block; margin: 1rem auto; height: auto;">
+         </li>
+        </ul>
+
+      <p>
+         Pour faciliter la navigation, j’ai également intégré une <strong>fonction de recherche</strong> permettant aux utilisateurs de retrouver rapidement un document, un article ou une information spécifique.
+      </p>
+
+      <p>
+         Enfin, j’ai rédigé et mis en ligne une centaine d’articles répartis par thématiques, correspondant aux besoins des différents services de la mairie (RH, communication, DGS, etc.), afin d’assurer un accès fluide et organisé à l’information.
+      </p>
+
+      <h2>Phase de test</h2>
+      <p>
+        À la fin de mon développement, j’ai demandé à l’équipe projet de tester l’ensemble du site (liens, agenda, téléchargement, …) pour dénicher de potentielles erreurs et de s'assurer de son bon fonctionnement.
+      </p>
+      <p>Voici un aperçu de la page d’accueil du nouvel intranet par rapport à l'ancien :</p>
+        <div style="display: flex; justify-content: center; gap: 20px;">
+        <img src="ancien accueil intranet.png" alt="Aperçu de l'ancien accueil" style="max-width:45%; height:auto;">
+        <img src="accueil intranet.png" alt="Aperçu de l'accueil" style="max-width:45%; height:auto;">
+        </div>
+
+
+      <h2>Évolutions possibles</h2>
+      <p>
+        Ce site a vocation à être un outil vivant, évolutif et utile à tous. Pour cela, il est essentiel que chaque service s’implique, en partageant ses actualités, ses ressources ou tout contenu pouvant bénéficier à l’ensemble de la collectivité.
+      </p>
+      <p>L’organisation pour la publication des contenus se déroule en deux étapes principales :</p>
+        <li>Validation des informations : Avant de publier, il faut faire valider les éléments par la DGS si ces informations concernent des sujets importants comme le fonctionnement de la collectivité, une réorganisation, ou tout autre changement significatif.</li>
+        <li>Transmission et mise en ligne : Une fois validés, les informations doivent être transmises à un agent du service communication, qui se chargera de les publier sur le site.</li>
+
+      <h2>Conclusion</h2>
+      <p>Ce projet de refonte de l’intranet a permis de répondre aux besoins de sécurité, de simplicité et d’évolutivité exprimés par la collectivité. La solution retenue, WordPress, offre une prise en main rapide et une grande flexibilité, tout en restant accessible aux utilisateurs non techniques.</p>
+      <p>Cette mission m’a permis de travailler en lien direct avec les différents services, d’analyser leurs besoins et de mettre en œuvre une solution concrète et adaptée. L’intranet est désormais un outil moderne, prêt à évoluer avec les usages de la mairie.</p>
+    </div>
+  </div>
+
+  <h2>Compétences développées</h2>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 1.5rem;">
+
+  <div style="text-align: center; width: 180px;">
+    <i class="fas fa-project-diagram fa-2x"></i>
+    <p>Gestion de projet</p>
+  </div>
+
+  <div style="text-align: center; width: 180px;">
+    <i class="fas fa-tools fa-2x"></i>
+    <p>Maîtrise d’outils (WordPress, etc.)</p>
+  </div>
+
+  <div style="text-align: center; width: 180px;">
+    <i class="fas fa-network-wired fa-2x"></i>
+    <p>Intégration de services numériques</p>
+  </div>
+
+  <div style="text-align: center; width: 180px;">
+    <i class="fas fa-users fa-2x"></i>
+    <p>Analyse des besoins utilisateurs</p>
+  </div>
+
+  <div style="text-align: center; width: 180px;">
+    <i class="fas fa-handshake fa-2x"></i>
+    <p>Collaboration interservices</p>
+  </div>
+
+</div>
+
+
+  <footer>
+    <div class="footer-left">
+      <p>© 2025 Louka Lavenir - Tous droits réservés</p>
+    </div>
+    <div class="footer-center">
+      <strong>Navigation :</strong>
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">À propos de moi</a>
+      <a href="projets.html">Mes projets</a>
+      <a href="veille.html">Veille technologique</a>
+      <a href="mecontacter.html">Me contacter</a>
+    </div>
+    <div class="footer-right">
+      <a href="mentions.html">Mentions légales</a>
+      <a href="politique.html">Politique de confidentialité</a>
+    </div>
+  </footer>
+
+</body>
+</html>

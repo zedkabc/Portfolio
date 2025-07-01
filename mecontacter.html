@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Me Contacter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      background-image: url('surface-marbree-noire.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #d4af37;
+      overflow-x: hidden;
+    }
+
+    .page-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.42);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-right: 0.5rem;
+      color: #d4af37;
+      background-color: transparent;
+      border: 1px solid #d4af37;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    nav a[href="mecontacter.html"] {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    .brand {
+      font-weight: 700;
+      text-align: right;
+      line-height: 1.2;
+    }
+
+    .content-wrapper {
+      max-width: 800px;
+      margin: 4rem auto 5rem auto;
+      padding: 2rem 3rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    main h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    main p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .socials {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      color: #d4af37;
+      font-size: 3.5rem;
+      text-decoration: none;
+      transition: transform 0.3s, color 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    .socials a div {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+      color: #fff;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #d4af37;
+      padding: 2rem 1rem;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-center {
+      text-align: center;
+    }
+
+    .footer-center a {
+      display: block;
+      margin: 0.25rem 0;
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer-center a:hover {
+      text-decoration: underline;
+      color: #ffffff;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-right a {
+      display: block;
+      color: #d4af37;
+      text-decoration: none;
+      margin: 0.25rem 0;
+    }
+
+    .footer-right a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .content-wrapper {
+        margin: 2rem 1rem 3rem 1rem;
+        padding: 1.5rem 2rem;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        margin-bottom: 0.5rem;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-left,
+      .footer-center,
+      .footer-right {
+        text-align: center;
+      }
+
+      .socials {
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <div class="page-wrapper">
+    <header>
+      <div class="brand">
+        LOUKA<br />LAVENIR
+      </div>
+      <nav>
+        <a href="index.html">ACCUEIL</a>
+        <a href="apropos.html">À PROPOS DE MOI</a>
+        <a href="projets.html">MES PROJETS</a>
+        <a href="veille.html">VEILLE TECHNOLOGIQUE</a>
+        <a href="mecontacter.html">ME CONTACTER</a>
+      </nav>
+    </header>
+
+    <div class="content-wrapper">
+      <main>
+        <h1>Me contacter</h1>
+        <p>Vous pouvez me joindre via les réseaux sociaux ci-dessous :</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/louka-lavenir-902a3b2ba/" target="_blank" rel="noopener noreferrer">
+            <div>LinkedIn</div>
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:lavenirlouka@gmail.com">
+            <div>E-mail</div>
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://github.com/zedkabc" target="_blank" rel="noopener noreferrer">
+            <div>GitHub</div>
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <p>© 2025 Louka Lavenir - Tous droits réservés</p>
+    </div>
+    <div class="footer-center">
+      <strong>Navigation :</strong>
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">À propos de moi</a>
+      <a href="projets.html">Mes projets</a>
+      <a href="veille.html">Veille technologique</a>
+      <a href="mecontacter.html">Me contacter</a>
+    </div>
+    <div class="footer-right">
+      <a href="mentions.html">Mentions légales</a>
+      <a href="politique.html">Politique de confidentialité</a>
+    </div>
+  </footer>
+
+</body>
+</html>
