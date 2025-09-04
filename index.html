@@ -16,8 +16,7 @@
       position: relative;
       min-height: 100vh;
       font-family: 'Montserrat', sans-serif;
-      background-color: #0f0c29; /* couleur de secours */
-      background-image: url('fond.webp'); /* mets ton image optimisée ici */
+      background-image: url('le-monstera-dore-laisse-une-ressource-de-conception-d-arriere-plan.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -26,14 +25,6 @@
       overflow-x: hidden;
       display: flex;
       flex-direction: column;
-
-      /* fade-in */
-      opacity: 0;
-      transition: opacity 1s ease-in;
-    }
-
-    body.loaded {
-      opacity: 1;
     }
 
     .overlay {
@@ -281,11 +272,5 @@
     </div>
   </footer>
 
-  <script>
-    // Ajoute la classe "loaded" quand tout est prêt
-    window.addEventListener("load", () => {
-      document.body.classList.add("loaded");
-    });
-  </script>
 </body>
 </html>
