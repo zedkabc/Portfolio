@@ -121,5 +121,8 @@ footer {
   text-decoration: underline;
 }
 
-
+.skill-tile {
+  background: rgba(0,0,0,0.55); /* fond uniquement sur la tuile */
+  /* ... autres styles ... */
+}
 
