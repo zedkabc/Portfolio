@@ -1,141 +1,110 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Veille Technologique</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Veille Technologique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
-    body {
-      margin: 0; 
-      padding: 0;
-      min-height: 100vh;
-      font-family: 'Montserrat', sans-serif;
-      background-image: url('arriere-plan-brillant-noir-et.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: #d4af37;
-      position: relative;
-      overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6); /* opacité */
-      z-index: 0;
-      pointer-events: none;
-    }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+            background-image: url('arriere-plan-brillant-noir-et.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll; /* Scroll pour éviter les problèmes de fond */
+            color: #d4af37;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-    header, main {
-      position: relative;
-      z-index: 1; 
-    }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75); /* Légèrement plus sombre pour le contraste */
+            z-index: 0;
+            pointer-events: none;
+        }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 2rem;
-    }
+        header, main, footer {
+            position: relative;
+            z-index: 1; 
+        }
 
-    nav a {
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 30px;
-      font-weight: bold;
-      margin-right: 0.5rem;
-      color: #d4af37;
-      border: 1px solid #d4af37;
-      transition: background 0.3s;
-    }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 2rem;
+        }
 
-    nav a:hover {
-      background-color: #d4af37;
-      color: #000;
-    }
+        nav a {
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-right: 0.5rem;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            transition: background 0.3s;
+        }
 
-    nav a[href="veille.html"] {
-      background-color: #d4af37;
-      color: #000;
-    }
+        nav a:hover {
+            background-color: #d4af37;
+            color: #000;
+        }
 
-    .brand {
-      font-weight: 700;
-      text-align: right;
-      line-height: 1.2;
-    }
+        nav a[href="veille.html"] {
+            background-color: #d4af37;
+            color: #000;
+        }
 
-    .content-wrapper {
-      max-width: 1300px;
-      margin: 2rem auto;
-      background-color: rgba(0, 0, 0, 0.7); /* Fond noir transparent */
-      border-radius: 12px;
-      padding: 2rem;
-      flex-grow: 1;
-    }
+        .brand {
+            font-weight: 700;
+            text-align: right;
+            line-height: 1.2;
+        }
 
-    main {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0;
-      text-align: center;
-    }
+        /* Conteneur principal de la veille */
+        .content-wrapper {
+            max-width: 1100px;
+            margin: 2rem auto;
+            background-color: rgba(0, 0, 0, 0.7); 
+            border-radius: 12px;
+            padding: 3rem;
+            flex-grow: 1;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); /* Effet brillant */
+        }
 
-    h1 {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-    }
+        main {
+            text-align: center;
+        }
 
-    h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    h3 {
-      font-size: 2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    p {
-      font-size: 1.3rem;
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      text-align: left;
-      margin: 0 auto 1rem auto;
-      max-width: 800px;
-      padding-left: 1.2rem;
-    }
-
-    li {
-      font-size: 1.3rem;
-      line-height: 1.8;
-      margin-bottom: 0.4rem;
-    }
-
-    li a {
-      color: #d4af37;       
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    li a:hover {
-      color: #fff;          /* blanc au survol */
-      text-decoration: underline;
-    }
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header-icon {
+            font-size: 4rem;
+            color: #d4af37;
+            margin-bottom: 1.5rem;
+        }
 
 
     footer {
@@ -154,245 +123,416 @@
       z-index: 1;
     }
 
-    .footer-left,
-    .footer-center,
-    .footer-right {
-      flex: 1;
-      min-width: 200px;
-    }
+        h3 {
+            font-size: 1.8rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #fff; /* Sous-titres en blanc pour ressortir */
+            text-align: left;
+        }
 
-    .footer-left {
-      text-align: left;
-    }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            text-align: justify; /* Justification pour un aspect plus soigné */
+        }
 
-    .footer-center {
-      text-align: center;
-    }
+        .illustration {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 10px;
+            margin: 1.5rem auto;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Styles spécifiques pour les illustrations ajoutées */
+        .illustration-small {
+            max-width: 500px;
+            margin: 1rem auto 2rem auto;
+        }
 
-    .footer-center a {
-      display: block;
-      margin: 0.25rem 0;
-      color: #d3a920;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        .illustration-tiny {
+            max-width: 250px;
+            float: right;
+            margin-left: 1rem;
+            margin-bottom: 0.5rem;
+        }
 
-    .footer-center a:hover {
-      text-decoration: underline;
-      color: #ffffff;
-    }
 
-    .footer-right {
-      text-align: right;
-    }
+        ul {
+            text-align: left;
+            margin: 0 auto 2rem auto;
+            max-width: 100%;
+            padding-left: 1.2rem;
+            list-style: disc; /* Remettre des puces par défaut */
+        }
 
-    .footer-right a {
-      display: block;
-      color: #d4af37;
-      text-decoration: none;
-      margin: 0.25rem 0;
-    }
+        li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 0.4rem;
+        }
 
-    .footer-right a:hover {
-      color: #ffffff;
-      text-decoration: underline;
-    }
+        li a {
+            color: #d4af37;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-    @media (max-width: 600px) {
-      footer {
-        flex-direction: column;
-        text-align: center;
-      }
+        li a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
 
-      .footer-left,
-      .footer-center,
-      .footer-right {
-        text-align: center;
-      }
-    }
+        /* --- STYLES DES CARTES DE SOURCES --- */
+        .tools-section h2 {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+        }
 
-  </style>
+        .source-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .source-card {
+            width: 200px; /* Taille fixe */
+            background: rgba(17, 17, 17, 0.8);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .source-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .source-link {
+            color: inherit; 
+            text-decoration: none;
+            display: block;
+        }
+
+        .source-image {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .source-link[href*="linkedin.com"] .source-image {
+            /* Style spécifique pour LinkedIn ou les icônes */
+            object-fit: contain;
+            background-color: #fff;
+            padding: 10px;
+        }
+
+        .source-content {
+            padding: 1rem;
+        }
+
+        .source-title {
+            font-size: 1.1rem;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .source-description {
+            font-size: 0.85rem;
+            color: #ccc;
+            line-height: 1.4;
+        }
+        /* --- FIN DES STYLES DES CARTES --- */
+        
+        /* Style pour les liens externes sous forme de liste */
+        .external-links ul {
+            text-align: center;
+            padding: 0;
+            list-style: none; /* Retirer les puces de la liste de liens externes */
+        }
+        .external-links li {
+            margin-bottom: 0.5rem;
+        }
+        .external-links li a {
+            display: block;
+            max-width: 400px; /* Limiter la largeur des boutons de liens externes */
+            margin: 0.5rem auto;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #d4af37;
+        }
+        .external-links li a:hover {
+            background: rgba(212, 175, 55, 0.3);
+            text-decoration: none;
+        }
+
+
+        footer {
+            flex-shrink: 0;
+            background-color: rgba(0, 0, 0, 0.9); /* Très sombre */
+            color: #d4af37;
+            padding: 2rem 1rem;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            box-sizing: border-box;
+            border-top: 2px solid #d4af37; /* Ligne pour séparer */
+        }
+
+        .footer-left,
+        .footer-center,
+        .footer-right {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-left {
+            text-align: left;
+        }
+
+        .footer-center {
+            text-align: center;
+        }
+
+        .footer-center a {
+            display: block;
+            margin: 0.25rem 0;
+            color: #d3a920;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-center a:hover {
+            text-decoration: underline;
+            color: #ffffff;
+        }
+
+        .footer-right {
+            text-align: right;
+        }
+
+        .footer-right a {
+            display: block;
+            color: #d4af37;
+            text-decoration: none;
+            margin: 0.25rem 0;
+        }
+
+        .footer-right a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                margin: 1rem;
+                padding: 2rem 1rem;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-left,
+            .footer-center,
+            .footer-right {
+                text-align: center;
+            }
+            .source-card {
+                width: 100%;
+            }
+            .illustration-tiny {
+                float: none;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+    </style>
 </head>
 <body>
 
-  <div class="overlay"></div>
+    <div class="overlay"></div>
 
-  <header>
-    <div class="brand">
-      LOUKA<br />LAVENIR
+    <header>
+        <div class="brand">
+            LOUKA<br />LAVENIR
+        </div>
+        <nav>
+            <a href="index.html">ACCUEIL</a>
+            <a href="apropos.html">À PROPOS DE MOI</a>
+            <a href="projets.html">MES PROJETS</a>
+            <a href="veille.html">VEILLE TECHNOLOGIQUE</a>
+            <a href="mecontacter.html">ME CONTACTER</a>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <main>
+            <div class="header-icon"><i class="fas fa-vr-cardboard"></i></div>
+            <h1>Veille Technologique</h1>
+
+            <h2>Qu'est-ce que la veille technologique ?</h2>
+            <p>
+                La veille technologique est un processus continu de surveillance des évolutions techniques et des innovations dans un domaine donné. Elle consiste à collecter, analyser et diffuser les informations (recherche, brevets, nouveaux produits, etc.) afin d'anticiper les changements et d'évaluer leur impact sur l'organisation et son environnement.
+            </p>
+
+            <h2>Sujet : Le futur de la Réalité Virtuelle (VR) et Mixte (MR)</h2>
+            <p>
+                La VR, qui immerge totalement l'utilisateur dans un environnement numérique, évolue rapidement. Le marché se dirige vers la <strong>Réalité Mixte (MR)</strong>, qui fusionne le monde réel et le monde virtuel, permettant une interaction naturelle avec les éléments numériques.
+            </p>
+            
+            <img class="illustration" src="img rv1.jpg" alt="Casque de réalité mixte affichant des éléments virtuels dans le monde réel" onerror="this.onerror=null;this.src='https://placehold.co/700x350/111/fff?text=Illustration+de+Casque+VR+et+Réalité+Mixte';" />
+
+            <hr style="border-color: rgba(212, 175, 55, 0.2); margin: 3rem 0;"/>
+
+            <!-- SECTION : APPLICATIONS ET ENJEUX (Condensé) -->
+            <section class="applications">
+                <h2>Applications Clés</h2>
+                <p>
+                    Historiquement réservée à la simulation militaire, la VR/MR est aujourd'hui essentielle dans de multiples secteurs :
+                </p>
+                <ul>
+                    <li><strong>Santé :</strong> Formation chirurgicale, rééducation post-traumatique, gestion de la douleur (thérapies immersives).</li>
+                    <img class="illustration illustration-small" src="img vr medic.png" alt="Simulation chirurgicale en réalité virtuelle" onerror="this.onerror=null;this.src='https://placehold.co/500x250/333/fff?text=Simulation+Chirurgicale+en+VR';" />
+                    <li><strong>Industrie et Éducation :</strong> Prototypage de produits, maintenance à distance assistée (AR), formation immersive des employés.</li>
+                    <li><strong>Divertissement :</strong> Jeux, événements virtuels, et nouveaux usages sociaux dans le <strong>métavers</strong>.</li>
+                </ul>
+            </section>
+            
+            <!-- SECTION : TENDANCES ET ENJEUX FUTURS (Condensé et axé sur l'avenir) -->
+            <section class="futur">
+                <h2>Les Tendances de Demain</h2>
+                
+                <h3>Matériel et Ergonomie</h3>
+                <p>
+                    L'avenir passe par la <strong>miniaturisation</strong> des équipements (lunettes légères, lentilles de contact) et l'intégration de capteurs de plus en plus précis (<em>Eye-tracking</em>, <em>Hand-tracking</em>, retour haptique avancé) pour une immersion plus naturelle. L'entrée d'Apple avec le Vision Pro en 2023 marque une convergence forte vers les casques autonomes de Réalité Mixte haut de gamme.
+                    <img class="illustration illustration-tiny" src="img vision pro.jpg" alt="Casque Apple Vision Pro" onerror="this.onerror=null;this.src='https://placehold.co/250x180/777/fff?text=Apple+Vision+Pro';" />
+                </p>
+
+                <h3>Les Défis de la VR</h3>
+                <p>
+                    Outre la performance technique et la baisse des coûts, la VR doit résoudre des enjeux importants :
+                </p>
+                <ul>
+                    <li><strong>Sécurité et Éthique :</strong> Gestion des données personnelles dans les environnements virtuels.</li>
+                    <li><strong>Confort :</strong> Réduction du mal des transports (cinétose) et de la fatigue visuelle.</li>
+                    <li><strong>Dépendance :</strong> Risques psychologiques liés à une confusion entre le réel et le virtuel.</li>
+                </ul>
+            </section>
+            
+            <hr style="border-color: rgba(212, 175, 55, 0.2); margin: 3rem 0;"/>
+
+            <!-- SECTION : OUTILS DE VEILLE (Cartes visuelles avec images plus thématiques) -->
+            <section class="tools-section">
+                <h2>Outils et Sources de Veille</h2>
+                
+                <p style="text-align: center; margin-bottom: 2rem;">Voici les ressources et méthodes que j'utilise pour me tenir informé de l'actualité de la VR/MR.</p>
+
+                <div class="source-grid">
+
+                    <!-- Carte 1 : Source technique -->
+                    <div class="source-card">
+                        <a href="https://realite-virtuelle.com/" target="_blank" class="source-link">
+                            <img src="img logo rv com.png" alt="Actualité AR/VR" class="source-image">
+                            <div class="source-content">
+                                <h3 class="source-title">Réalité-Virtuelle.com</h3>
+                                <p class="source-description">Le site d'actualité de référence en français sur les casques, les applications et le Métavers.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Carte 2 : LinkedIn -->
+                    <div class="source-card">
+                        <a href="https://www.linkedin.com/search/results/all/?keywords=r%C3%A9alit%C3%A9%20virtuelle" target="_blank" class="source-link">
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" class="source-image">
+                            <div class="source-content">
+                                <h3 class="source-title">LinkedIn</h3>
+                                <p class="source-description">Réseau professionnel pour suivre les experts, les startups et les publications des entreprises du secteur.</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Carte 3 : Source spécialisée (Tests matériels) -->
+                    <div class="source-card">
+                        <a href="https://uploadvr.com/" target="_blank" class="source-link">
+                            <img src="img uploadvr.jpg" alt="Upload VR Logo" class="source-image">
+                            <div class="source-content">
+                                <h3 class="source-title">UploadVR (EN)</h3>
+                                <p class="source-description">Une des plus grandes sources anglophones couvrant le futur des casques et l'industrie du jeu VR.</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Carte 4 : Source Générale (Industrie) -->
+                    <div class="source-card">
+                        <a href="https://reality.fr/blog/sante-medecine-realite-virtuelle/" target="_blank" class="source-link">
+                            <img src="Logo reality vr.png" class="source-image">
+                            <div class="source-content">
+                                <h3 class="source-title">Reality.fr </h3>
+                                <p class="source-description">La Réalité Virtuelle dans le domaine de la santé.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+            
+            <!-- LIENS EXTERNES (Raccourcis) -->
+            <section class="external-links">
+                <h2>Ressources Directes</h2>
+                <ul>
+                    <li><a href="https://www.meta.com/fr/quest/" target="_blank">Site officiel Meta Quest</a></li>
+                    <li><a href="https://www.apple.com/fr/vision-pro/" target="_blank">Apple Vision Pro</a></li>
+                    <li><a href="https://fr.wikipedia.org/wiki/R%C3%A9alit%C3%A9_virtuelle" target="_blank">Article Wikipédia : Réalité Virtuelle</a></li>
+                </ul>
+            </section>
+
+
+        </main>
     </div>
-    <nav>
-      <a href="index.html">ACCUEIL</a>
-      <a href="apropos.html">À PROPOS DE MOI</a>
-      <a href="projets.html">MES PROJETS</a>
-      <a href="veille.html">VEILLE TECHNOLOGIQUE</a>
-      <a href="mecontacter.html">ME CONTACTER</a>
-    </nav>
-  </header>
 
-  <div class="content-wrapper">
-    <main>
-      <h1>Veille Technologique</h1>
-
-      <h2>Qu'est ce que la veille technologique ?</h2>
-      <p>La veille technologique, élément de la veille stratégique, consiste à surveiller les évolutions techniques, les innovations dans un secteur d’activité donnée. La veille technologique comprend notamment la surveillance, la collecte, le partage et la diffusion d’information permettant d’anticiper ou de s’informer sur des changements en matière de recherche, développement, brevet, lancement de nouveaux produits, matériaux, processus, concepts, innovation de fabrication, etc…. Cela a pour but d’évaluer l’impact sur l’environnement et l’organisation.</p>
-
-      <h2>Sujet : Quel est le futur de la réalité virtuelle ?</h2>  
-      <h2>Histoire de la réalité virtuelle</h2>
-
-      <h3>1950–1970</h3>
-      <p>
-        En 1956, Morton Heilig invente le <em>Sensorama</em>, un simulateur multisensoriel. Dans les années 60, les premières applications militaires apparaissent, notamment un simulateur de vol développé par Thomas A. Furness III.
-      </p>
-
-      <h3>1970–1990</h3>
-      <p>
-        L’université de l’Utah développe un des premiers casques VR. Le MIT propose une simulation de la ville d’Aspen. Le DataGlove (1982) permet de détecter les mouvements de la main. Le terme "réalité virtuelle" est popularisé par Jaron Lanier dans les années 80.
-      </p>
-
-      <h3>1990–2000</h3>
-      <p>
-        Sega développe le Sega VR, Apple lance QuickTime VR, et Virtuality crée les premières bornes d’arcade multijoueur. La VR reste cependant coûteuse et limitée aux usages professionnels.
-      </p>
-
-      <h3>2000 à aujourd’hui</h3>
-      <p>
-        Google introduit Street View en 2007. En 2014, Facebook rachète Oculus VR. Entre 2016 et 2020, des casques comme le HTC Vive, Oculus Rift ou PlayStation VR sont lancés, rendant la VR plus accessible. En 2023, Apple entre sur le marché avec le Vision Pro.
-      </p>
-
-      <h2>Utilités et applications</h2>
-      <p>
-        La réalité virtuelle n’est pas uniquement destinée aux jeux vidéo. Elle est utilisée dans :
-      </p>
-      <ul>
-        <li>L’architecture : pour visualiser des projets en 3D avant construction.</li>
-        <li>La santé : pour la rééducation, les phobies, ou la formation médicale.</li>
-        <li>L’éducation : pour l’apprentissage immersif et interactif.</li>
-        <li>La simulation professionnelle : dans l’armée, l’aviation ou l’industrie.</li>
-      </ul>
-      <p>
-        Là où le réel est risqué, coûteux ou inaccessible, la VR permet de tester, former ou explorer en toute sécurité.
-      </p>
-
-      <h2>Concurrence et équipements</h2>
-      <p>
-        Le marché VR est très concurrentiel. Oculus (Meta) domine historiquement, suivi de HTC (Vive), Sony (PlayStation VR), et désormais Apple avec le Vision Pro.
-      </p>
-      <p>
-        Attention à ne pas confondre avec la réalité augmentée (AR) : des appareils comme l’<strong>Hololens</strong> de Microsoft projettent des hologrammes dans le monde réel, alors que la VR isole totalement l’utilisateur dans un monde virtuel.
-      </p>
-
-      <h2>La réalité virtuelle dans la médecine</h2>
-      <p>
-        La réalité virtuelle joue un rôle croissant dans le domaine médical. Elle permet aux professionnels de santé de s'entraîner à des procédures complexes via des simulateurs immersifs, sans risque pour des patients réels. Grâce à la VR, les étudiants en médecine peuvent explorer l’anatomie humaine en 3D ou participer à des scénarios d’urgence simulés.
-      </p>
-      <p>
-        Elle est également utilisée dans la prise en charge de patients souffrant de douleurs chroniques, d’anxiété ou de troubles post-traumatiques. Par exemple, certaines cliniques proposent des expériences immersives pour réduire la douleur durant les soins, ou pour traiter des phobies grâce à l'exposition contrôlée dans un environnement virtuel.
-      </p>
-      <p>
-        Des solutions comme <strong>AppliedVR</strong> ou <strong>Karuna Labs</strong> sont déjà utilisées dans des hôpitaux pour la rééducation ou la gestion de la douleur. La téléchirurgie et les consultations immersives, encore à l’état expérimental, pourraient également devenir des standards dans le futur.
-      </p>
-
-      <h2>Le futur de la VR</h2>
-      <ul>
-        <li><strong>Miniaturisation :</strong> des casques plus petits, légers, et ergonomiques pour le grand public.</li>
-        <li><strong>Plus de sens :</strong> retour haptique, simulation de l’odorat, vent ou température.</li>
-        <li><strong>Accessibilité :</strong> baisse des coûts et démocratisation via les smartphones.</li>
-        <li><strong>Enseignement :</strong> la formation immersive pourrait remplacer les salles de classe traditionnelles dans certains domaines.</li>
-        <li><strong>Réalité mixte :</strong> fusion de la VR et AR pour enrichir l'interaction avec l’environnement réel.</li>
-      </ul>
-      <p>
-        Toutefois, une VR trop immersive pourrait poser des problèmes psychologiques : confusion entre réel et virtuel, fatigue émotionnelle, voire dépendance.
-      </p>
-
-     <h2>Outils utilisés pour la veille</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-bottom: 3rem;">
-
-  <!-- Histoire de la VR -->
-  <div style="width: 280px; background: #111; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
-    <a href="https://www.irwino.com/histoire-de-la-realite-virtuelle/" target="_blank" style="color: inherit; text-decoration: none;">
-      <img src="image histoire vr.webp" alt="Histoire de la réalité virtuelle" style="width: 100%; height: 150px; object-fit: cover;">
-      <div style="padding: 1rem;">
-        <h3 style="font-size: 1.3rem; color: #d4af37;">Irwino.com</h3>
-        <p style="font-size: 0.9rem; color: #ccc;">L’histoire de la réalité virtuelle : Des années 50 à nos jours.</p>
-      </div>
-    </a>
-  </div>
-
-  <!-- Vision Pro -->
-  <div style="width: 280px; background: #111; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
-    <a href="https://www.augmented-reality.fr/2023/07/apple-vision-pro-pivot-de-la-realite-augmentee-1-3-naming-et-technique/" target="_blank" style="color: inherit; text-decoration: none;">
-      <img src="image article vision pro.webp" alt="Apple Vision Pro" style="width: 100%; height: 150px; object-fit: cover;">
-      <div style="padding: 1rem;">
-        <h3 style="font-size: 1.3rem; color: #d4af37;">Augmented-Reality.fr</h3>
-        <p style="font-size: 0.9rem; color: #ccc;">Apple Vision Pro : pivot de la réalité augmentée ?</p>
-      </div>
-    </a>
-  </div>
-
-  <!-- Médecine et VR -->
-  <div style="width: 280px; background: #111; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
-    <a href="https://reality.fr/blog/sante-medecine-realite-virtuelle/" target="_blank" style="color: inherit; text-decoration: none;">
-      <img src="image medecine vr.jpg" alt="VR en médecine" style="width: 100%; height: 150px; object-fit: cover;">
-      <div style="padding: 1rem;">
-        <h3 style="font-size: 1.3rem; color: #d4af37;">Reality.fr</h3>
-        <p style="font-size: 0.9rem; color: #ccc;">La Réalité Virtuelle dans le domaine de la santé.</p>
-      </div>
-    </a>
-  </div>
-
-  <!-- Le futur -->
-  <div style="width: 280px; background: #111; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
-    <a href="https://www.realite-virtuelle.com/le-futur-de-la-vr/" target="_blank" style="color: inherit; text-decoration: none;">
-      <img src="image futur vr.webp" alt="Wikipédia VR" style="width: 100%; height: 150px; object-fit: contain; background-color: #fff;">
-      <div style="padding: 1rem;">
-        <h3 style="font-size: 1.3rem; color: #d4af37;">Réalité-Virtuelle.com</h3>
-        <p style="font-size: 0.9rem; color: #ccc;">Le futur de la VR : que faut-il espérer ?</p>
-      </div>
-    </a>
-  </div>
-
-  <!-- LinkedIn / veille pro -->
-  <div style="width: 280px; background: #111; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
-    <a href="https://www.linkedin.com/search/results/all/?keywords=r%C3%A9alit%C3%A9%20virtuelle&origin=GLOBAL_SEARCH_HEADER&sid=%3Bog" target="_blank" style="color: inherit; text-decoration: none;">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 100%; height: 150px; object-fit: contain; background-color: #fff;">
-      <div style="padding: 1rem;">
-        <h3 style="font-size: 1.3rem; color: #d4af37;">LinkedIn</h3>
-        <p style="font-size: 0.9rem; color: #ccc;">Suivi d’actualités technologiques et d’experts en VR sur LinkedIn.</p>
-      </div>
-    </a>
-  </div>
-
-</div>
-
-      <h2>Liens externes</h2>
-      <ul>
-        <li><a href="https://www.meta.com/fr/quest/">Site officiel Meta Quest</a></li>
-        <li><a href="https://www.apple.com/fr/vision-pro/">Apple Vision Pro</a></li>
-        <li><a href="https://fr.wikipedia.org/wiki/R%C3%A9alit%C3%A9_virtuelle">Article Wikipédia réalité virtuelle</a></li>
-        <li><a href="https://www.casques-vr.com/">Casques-VR.com</a></li>
-      </ul>
-
-    </main>
-  </div>
-
-  <footer>
-    <div class="footer-left">
-      <p>© 2025 Louka Lavenir - Tous droits réservés</p>
-    </div>
-    <div class="footer-center">
-      <strong>Navigation :</strong>
-      <a href="index.html">Accueil</a>
-      <a href="apropos.html">À propos de moi</a>
-      <a href="projets.html">Mes projets</a>
-      <a href="veille.html">Veille technologique</a>
-      <a href="mecontacter.html">Me contacter</a>
-    </div>
-    <div class="footer-right">
-      <a href="mentions.html">Mentions légales</a>
-      <a href="politique.html">Politique de confidentialité</a>
-    </div>
-  </footer>
+    <footer>
+        <div class="footer-left">
+            <p>© 2025 Louka Lavenir - Tous droits réservés</p>
+        </div>
+        <div class="footer-center">
+            <strong>Navigation :</strong>
+            <a href="index.html">Accueil</a>
+            <a href="apropos.html">À propos de moi</a>
+            <a href="projets.html">Mes projets</a>
+            <a href="veille.html">Veille technologique</a>
+            <a href="mecontacter.html">Me contacter</a>
+        </div>
+        <div class="footer-right">
+            <a href="mentions.html">Mentions légales</a>
+            <a href="politique.html">Politique de confidentialité</a>
+        </div>
+    </footer>
 
 </body>
 </html>
