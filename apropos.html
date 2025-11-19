@@ -12,16 +12,15 @@
             box-sizing: border-box;
         }
 
-        /* NOUVEAU : Assurer que le conteneur racine est transparent */
+        /* CORRECTION CHROME : On retire height: 100% sur html pour laisser le scroll naturel */
         html {
             background-color: transparent !important;
-            height: 100%;
         }
 
         body {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            min-height: 100vh; /* Assure au moins la hauteur de l'écran */
             font-family: 'Montserrat', sans-serif;
             
             /* S'ASSURER QUE LE FOND DU BODY N'EST PAS UNE COULEUR UNIE */
@@ -33,8 +32,9 @@
             background-position: center;
             background-repeat: no-repeat;
             
-            /* CHANGEMENT IMPORTANT : Utiliser scroll au lieu de fixed */
-            background-attachment: scroll;
+            /* CORRECTION FOND : fixed est souvent mieux pour couvrir tout l'écran, 
+               mais si scroll est requis, on l'applique au body qui grandit avec le contenu */
+            background-attachment: fixed; 
             
             color: #d4af37; /* Couleur dorée */
             overflow-x: hidden;
@@ -111,6 +111,15 @@
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
+        
+        /* STYLE POUR LE NOUVEAU H3 */
+        h3 {
+            font-size: 1.8rem;
+            margin-top: 2rem; 
+            margin-bottom: 0.5rem;
+            color: #d4af37;
+        }
+
 
         p {
             font-size: 1.2rem;
@@ -296,13 +305,19 @@
                 Je m'appelle Louka Lavenir, j'ai 19 ans et je poursuis actuellement un <strong>BTS SIO</strong> au sein de l'école IRIS Mediaschool.
             </p>
             <p>
-                Je suis titulaire d'un baccalauréat général avec les spécialités Mathématiques et Numérique & Sciences Informatiques. 
-                Actuellement, j'effectue mon alternance en tant que technicien informatique à la mairie de Mandelieu-la-Napoule.
-            </p>
+                Je suis titulaire d’un baccalauréat général avec les spécialités Mathématiques et Numérique & Sciences Informatiques. 
+                Actuellement, j’effectue mon alternance en tant que technicien informatique à la mairie de Mandelieu-la-Napoule.
+            </p>  
             <h2>Le BTS SIO, c'est quoi ?</h2>
             <p>
                 Le BTS SIO est une formation de deux ans qui prépare aux métiers de l'informatique et des systèmes d'information. 
                 Elle offre deux spécialisations : SISR (Solutions d'Infrastructure, Systèmes et Réseaux) et SLAM (Solutions Logicielles et Applications Multimédia). 
+            </p>
+            <!-- NOUVEAU TITRE H3 -->
+            <h3>Mon choix : SISR</h3>
+            <!-- VOTRE PHRASE EST MAINTENANT LE CONTENU SOUS LE TITRE -->
+            <p>
+                L'option SISR se concentre sur l'administration des réseaux, la sécurisation des infrastructures et la gestion des parcs informatiques. En choisissant cette voie, on apprend notamment à installer, configurer et maintenir des serveurs, des équipements réseaux et des systèmes d'exploitation (Windows Server, Linux).
                 J'ai personnellement choisi l'option SISR car je suis attiré par tout ce qui concerne les systèmes et réseaux.
             </p>
         </div>
