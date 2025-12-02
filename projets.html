@@ -8,17 +8,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    /* Reset global : retire marges par défaut et définit un modèle de box-sizing */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
-    html, body { 
-      height: 100%;
+    /*
+      CORRECTION CHROME :
+      - On évite d'appliquer `height:100%` sur `html` (peut empêcher le body
+        de s'étendre et provoquer des artefacts de rendu dans Chrome).
+      - On force la couleur de fond en `transparent` ici pour laisser
+        l'image de fond du `body` s'afficher correctement.
+    */
+    html {
+      background-color: transparent !important;
     }
 
+    /*
+      Body principal :
+      - `min-height:100vh` garantit que le footer colle en bas si peu de contenu.
+      - L'image de fond est appliquée ici (couverte et fixée).
+      - `background-color: transparent` est utile pour éviter des blocs
+        de couleur unie qui masqueraient l'image.
+    */
     body {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      /* S'ASSURER QUE LE FOND DU BODY N'EST PAS UNE COULEUR UNIE */
+      background-color: transparent !important;
       font-family: 'Montserrat', sans-serif;
       background-image: url(fond-d-illustration-de-texture-de-superposition-de-poussiere-doree.jpg);
       background-size: cover;
@@ -30,6 +47,7 @@
       overflow-x: hidden;
     }
 
+    /* couche sombre fixe derrière le contenu pour améliorer lisibilité */
     body::before {
       content: "";
       position: fixed;
@@ -39,15 +57,17 @@
       z-index: -1;
     }
 
+    /* Entête : nom / navigation */
     header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       padding: 2rem;
       position: relative;
-      z-index: 1;
+      z-index: 1; /* au-dessus du fond sombre */
     }
 
+    /* Liens de navigation stylés comme des boutons */
     nav a {
       text-decoration: none;
       padding: 0.5rem 1rem;
@@ -75,35 +95,70 @@
       line-height: 1.2;
     }
 
+    /* Contenu principal centré et limité en largeur */
     main {
       flex: 1 0 auto;
-      max-width: 900px;
-      margin: 5rem auto;
-      padding: 0;
+      max-width: 1400px; /* limite la largeur pour une lecture confortable */
+      /* réduire l'espace au-dessus pour remonter le titre */
+      margin: 3rem auto;
+      padding: 0 1rem;
       text-align: center;
       position: relative;
-      z-index: 1;
+      z-index: 1; /* au-dessus du calque de fond */
     }
 
+    /* Titre principal de la page : un peu plus grand et remonté */
     h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 3.8rem; /* augmenté pour plus d'impact */
+      margin-top: 0;     /* pas d'espace supplémentaire au-dessus */
+      margin-bottom: 1.5rem; /* petit espacement sous le titre */
     }
 
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
+    /* Réglages réactifs : taille du titre adaptée sur petits écrans */
+    @media (max-width: 800px) {
+      h1 { font-size: 2.2rem; }
+      main { margin: 2rem auto; }
     }
 
+    /* Espacement entre le titre et le paragraphe dans chaque carte projet */
+    .project h2 {
+      margin-bottom: 0.75rem;
+    }
+
+    /* ------------------------- */
+    /* GRILLE DES PROJETS : 2 colonnes sur desktop, 1 sur mobile */
+    /* ------------------------- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* conserve 2 colonnes */
+      gap: 3rem; /* espacement entre cartes */
+      margin-bottom: 3rem;
+      padding: 0 2rem; /* respiration horizontale */
+      align-items: start; /* aligne le contenu en haut pour éviter décalages */
+    }
+
+    @media (max-width: 800px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /*
+      Carte projet (.project) : chaque carte a un fond semi-transparent,
+      un peu de padding et une bordure dorée. Le `min-height` garantit
+      une taille visuelle cohérente entre cartes.
+    */
     .project {
-      margin-top: 2rem;
       border: 1px solid #d4af37;
-      padding: 1.5rem;
+      padding: 2rem; /* espace intérieur autour du contenu */
       border-radius: 20px;
       position: relative;
       background: rgba(0,0,0,0.3);
+      width: 100%; /* occupe l'espace de la colonne */
+      min-height: 330px; /* garde des cartes de taille raisonnable */
     }
 
+    /* Petite icône flèche en bas à droite de chaque carte */
     .arrow-link {
       position: absolute;
       bottom: 15px;
@@ -118,6 +173,7 @@
       color: #fff;
     }
 
+    /* Lien vers le fichier de synthèse (tableau) en haut à droite du main */
     .synthese-link {
       text-align: right;
       margin: 2rem 1rem 0 0;
@@ -138,6 +194,7 @@
       background-color: rgba(255, 255, 255, 0.1);
     }
 
+    /* Pied de page : sombre et fixe après le contenu */
     footer {
       flex-shrink: 0;
       background-color: rgba(0, 0, 0, 0.4);
@@ -161,20 +218,16 @@
       min-width: 200px;
     }
 
-    .footer-left {
-      text-align: left;
-    }
-
-    .footer-center {
-      text-align: center;
-    }
+    .footer-left { text-align: left; }
+    .footer-center { text-align: center; }
+    .footer-right { text-align: right; }
 
     .footer-center strong {
       display: block;
       margin-bottom: 0.5rem;
     }
 
-    .footer-center a {
+    .footer-center a, .footer-right a {
       display: block;
       margin: 0.25rem 0;
       color: #d4af37;
@@ -182,34 +235,13 @@
       font-weight: bold;
     }
 
-    .footer-center a:hover {
-      text-decoration: underline;
-      color: #fff;
-    }
-
-    .footer-right {
-      text-align: right;
-    }
-
-    .footer-right a {
-      display: block;
-      color: #d4af37;
-      text-decoration: none;
-      margin: 0.25rem 0;
-    }
-
+    .footer-center a:hover,
     .footer-right a:hover {
       color: #fff;
       text-decoration: underline;
     }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      main {
-        margin: 2rem 1rem;
-      }
       footer {
         flex-direction: column;
         text-align: center;
@@ -241,28 +273,35 @@
   <main>
     <h1>Mes Projets</h1>
 
-    <div class="project">
-      <h2>Création d'un Intranet pour la mairie de Mandelieu la-Napoule</h2>
-      <p>Avec l’aide d’un collègue, j’ai conçu un nouvel intranet pour la mairie afin de remplacer l’ancien système, devenu obsolète.</p>
-      <br><img src="logo mandelieu bleu.jpg" alt="" style="max-width:20%; height:auto; margin-top: 1rem; display: block; margin: 1rem auto; height: auto;">
-      <a href="Intranet.html" class="arrow-link" aria-label="Voir le projet Intranet">
-        <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
+    <!-- GRILLE DES PROJETS -->
+    <div class="projects-grid">
 
-    <div class="project">
-      <h2>Déploiement d’un serveur de messagerie local</h2>
-      <p>J’ai conçu et déployé un serveur de messagerie en Python sur une machine virtuelle Debian, accessible en réseau local. Le projet incluait l’ajout de fonctionnalités comme les canaux de discussion, les messages privés, un menu d’administration, ainsi que la mise en place d’outils de sécurité et de journalisation.</p>
-      <p>Compétences développées : Déploiement de services réseau, Programmation Python, Sécurisation de serveur (fail2ban, logs), Autonomie, Tests d’interopérabilité.</p>
-      <a href="https://github.com/zedkabc/classcord-server" class="arrow-link" aria-label="Voir le projet classcord-server">
-        <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
+      <div class="project">
+        <h2>Création d'un Intranet pour la mairie</h2>
+        <p>Avec l’aide d’un collègue, j’ai conçu un nouvel intranet pour la mairie afin de remplacer l’ancien système.</p>
+        <br><a href="Intranet.html"><img src="logo mandelieu bleu.jpg" style="max-width:40%; margin: 1rem auto; display:block;"></a>
+        <a href="Intranet.html" class="arrow-link"><i class="fas fa-arrow-right"></i></a>
+      </div>
 
-    <!-- Bouton Tableau de synthèse -->
+      <div class="project">
+        <h2>Déploiement d’un serveur de messagerie local</h2>
+        <p>Développement d’un serveur de messagerie Python sous Debian avec logs, admin menu, sécurité, canaux et MP.</p>
+        <br><a href="https://github.com/zedkabc/classcord-server" target="_blank" rel="noopener noreferrer"><img src="img iris.png" style="max-width:30%; margin: 1rem auto; display:block;"></a>
+        <a href="https://github.com/zedkabc/classcord-server" class="arrow-link"><i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="project">
+        <h2>Mise en place de GLPI sur un serveur</h2>
+        <p>Installation et configuration de GLPI (gestionnaire de parc) sur un serveur Debian : configuration Apache, base de données, plugins et sécurité.</p>
+        <br><a href="https://github.com/Mediaschool-BTS-SISR-2025/Serveur_GLPI_Louka"><img src="img glpi.png" style="max-width:50%; margin: 1rem auto; display:block;"></a>
+        <a href="https://github.com/Mediaschool-BTS-SISR-2025/Serveur_GLPI_Louka" class="arrow-link"><i class="fas fa-arrow-right"></i></a>
+      </div>
+
+    <!-- Tableau de synthèse -->
     <div class="synthese-link">
       <a href="Tableau de synthèse.xlsx" target="_blank">📊 Tableau de synthèse</a>
     </div>
+
   </main>
 
   <footer>

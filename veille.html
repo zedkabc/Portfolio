@@ -8,7 +8,14 @@
     <!-- Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <style>
+        <style>
+                /*
+                    FEUILLE DE STYLES PRINCIPALE POUR veille.html
+                    - Contient les règles de mise en page (body, header, main, footer)
+                    - Styles pour les cartes de sources, illustrations et responsive
+                    - Commentaires ajoutés pour expliquer chaque bloc et faciliter
+                        la maintenance future.
+                */
         * {
             margin: 0;
             padding: 0;
@@ -30,7 +37,12 @@
             overflow-x: hidden;
         }
 
-        .overlay {
+                /*
+                    Overlay sombre : couche fixe couvrant tout l'arrière-plan.
+                    Objectif : améliorer le contraste du texte par-dessus l'image.
+                    `pointer-events: none` permet de laisser la page interagir normalement.
+                */
+                .overlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -41,10 +53,14 @@
             pointer-events: none;
         }
 
-        header, main, footer {
-            position: relative;
-            z-index: 1; 
-        }
+                /*
+                    Empilement (z-index) : header, main et footer doivent se placer
+                    au-dessus de l'overlay fixe situé en z-index 0.
+                */
+                header, main, footer {
+                        position: relative;
+                        z-index: 1; 
+                }
 
         header {
             display: flex;
@@ -80,7 +96,7 @@
             line-height: 1.2;
         }
 
-        /* Conteneur principal de la veille */
+        /* Conteneur principal de la veille : boîte centrale avec fond semi-translucide */
         .content-wrapper {
             max-width: 1100px;
             margin: 2rem auto;
@@ -95,15 +111,28 @@
             text-align: center;
         }
 
+        /* Titre principal : style voyant pour la page de veille */
         h1 {
             font-size: 3.5rem;
             margin-bottom: 0.5rem;
         }
         
+        /* Icône au-dessus du titre pour renforcer l'identité visuelle */
         .header-icon {
             font-size: 4rem;
             color: #d4af37;
             margin-bottom: 1.5rem;
+        }
+
+        /* Petit espace spécifique avant le 2ᵉ h2 ("Sujet : Le futur...")
+           pour éviter que le titre ne colle trop au paragraphe précédent */
+        .content-wrapper h2:nth-of-type(2) {
+            margin-top: 1.25rem;
+        }
+
+        /* Petit espace spécifique sous les 3 premiers h2 du contenu */
+        .content-wrapper h2:nth-of-type(-n+3) {
+            margin-bottom: 1.1rem; /* espace entre le h2 et le paragraphe suivant */
         }
 
 
@@ -131,13 +160,14 @@
             text-align: left;
         }
 
-        p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            text-align: justify; /* Justification pour un aspect plus soigné */
+        /* Sous-titres (h3) : style secondaire pour sections internes */
+        h3 {
+            font-size: 1.8rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #fff; /* Sous-titres en blanc pour ressortir */
+            /* alignement contrôlé globalement par .content-wrapper rules */
         }
-
         .illustration {
             width: 100%;
             max-width: 700px;
@@ -150,7 +180,8 @@
         
         /* Styles spécifiques pour les illustrations ajoutées */
         .illustration-small {
-            max-width: 500px;
+            /* Réduire la taille des illustrations secondaires (learning / jeu) */
+            max-width: 360px;
             margin: 1rem auto 2rem auto;
         }
 
@@ -376,12 +407,16 @@
 </head>
 <body>
 
+    <!-- Overlay sombre fixe : améliore le contraste du contenu sur l'image de fond -->
     <div class="overlay"></div>
 
+    <!-- En-tête du site : marque et navigation principale -->
     <header>
+        <!-- Bloc marque (nom/branding) aligné à droite -->
         <div class="brand">
             LOUKA<br />LAVENIR
         </div>
+        <!-- Navigation principale : liens vers les pages importantes du portfolio -->
         <nav>
             <a href="index.html">ACCUEIL</a>
             <a href="apropos.html">À PROPOS DE MOI</a>
@@ -391,49 +426,66 @@
         </nav>
     </header>
 
+    <!-- Conteneur central (boîte de contenu) : regroupe tout le contenu de la page -->
     <div class="content-wrapper">
         <main>
+            <!-- Petite icône décorative liée au thème VR -->
             <div class="header-icon"><i class="fas fa-vr-cardboard"></i></div>
+            <!-- Titre principal de la page -->
             <h1>Veille Technologique</h1>
 
+            <!-- Section descriptive : définition de la veille technologique -->
             <h2>Qu'est-ce que la veille technologique ?</h2>
             <p>
                 La veille technologique est un processus continu de surveillance des évolutions techniques et des innovations dans un domaine donné. Elle consiste à collecter, analyser et diffuser les informations (recherche, brevets, nouveaux produits, etc.) afin d'anticiper les changements et d'évaluer leur impact sur l'organisation et son environnement.
             </p>
 
+            <!-- Sujet central de la page -->
             <h2>Sujet : Le futur de la Réalité Virtuelle (VR) et Mixte (MR)</h2>
             <p>
                 La VR, qui immerge totalement l'utilisateur dans un environnement numérique, évolue rapidement. Le marché se dirige vers la <strong>Réalité Mixte (MR)</strong>, qui fusionne le monde réel et le monde virtuel, permettant une interaction naturelle avec les éléments numériques.
             </p>
-            
+
+            <!-- Illustration principale : casque VR/MR -->
             <img class="illustration" src="img rv1.jpg" alt="Casque de réalité mixte affichant des éléments virtuels dans le monde réel" onerror="this.onerror=null;this.src='https://placehold.co/700x350/111/fff?text=Illustration+de+Casque+VR+et+Réalité+Mixte';" />
 
             <hr style="border-color: rgba(212, 175, 55, 0.2); margin: 3rem 0;"/>
 
             <!-- SECTION : APPLICATIONS ET ENJEUX (Condensé) -->
+            <!-- Explique les usages concrets de la VR/MR dans différents secteurs -->
             <section class="applications">
                 <h2>Applications Clés</h2>
                 <p>
                     Historiquement réservée à la simulation militaire, la VR/MR est aujourd'hui essentielle dans de multiples secteurs :
                 </p>
+                <!-- Liste d'exemples illustrés par des images secondaires -->
                 <ul>
                     <li><strong>Santé :</strong> Formation chirurgicale, rééducation post-traumatique, gestion de la douleur (thérapies immersives).</li>
+                    <!-- Illustration pour la partie santé (taille réduite via .illustration-small) -->
                     <img class="illustration illustration-small" src="img vr medic.png" alt="Simulation chirurgicale en réalité virtuelle" onerror="this.onerror=null;this.src='https://placehold.co/500x250/333/fff?text=Simulation+Chirurgicale+en+VR';" />
                     <li><strong>Industrie et Éducation :</strong> Prototypage de produits, maintenance à distance assistée (AR), formation immersive des employés.</li>
+                    <!-- Illustration pour la partie apprentissage / learning -->
+                    <img class="illustration illustration-small" src="img vr learning.jpg" alt="Learning VR" onerror="this.onerror=null;this.src='https://placehold.co/360x180/333/fff?text=VR+Learning';" />
                     <li><strong>Divertissement :</strong> Jeux, événements virtuels, et nouveaux usages sociaux dans le <strong>métavers</strong>.</li>
+                    <!-- Illustration pour jeux VR (corrigée et réduite) -->
+                    <img class="illustration illustration-small" src="img vr jeu.jpg" alt="Jeu VR" onerror="this.onerror=null;this.src='https://placehold.co/360x180/333/fff?text=VR+Jeu';" />
                 </ul>
             </section>
             
             <!-- SECTION : TENDANCES ET ENJEUX FUTURS (Condensé et axé sur l'avenir) -->
+            <!-- Présente les orientations technologiques et les défis à venir -->
             <section class="futur">
                 <h2>Les Tendances de Demain</h2>
                 
+                <!-- Matériel et ergonomie : focus sur la miniaturisation et capteurs -->
                 <h3>Matériel et Ergonomie</h3>
                 <p>
                     L'avenir passe par la <strong>miniaturisation</strong> des équipements (lunettes légères, lentilles de contact) et l'intégration de capteurs de plus en plus précis (<em>Eye-tracking</em>, <em>Hand-tracking</em>, retour haptique avancé) pour une immersion plus naturelle. L'entrée d'Apple avec le Vision Pro en 2023 marque une convergence forte vers les casques autonomes de Réalité Mixte haut de gamme.
+                    <!-- Petite illustration inline pour illustrer le Vision Pro -->
                     <img class="illustration illustration-tiny" src="img vision pro.jpg" alt="Casque Apple Vision Pro" onerror="this.onerror=null;this.src='https://placehold.co/250x180/777/fff?text=Apple+Vision+Pro';" />
                 </p>
 
+                <!-- Enjeux : sécurité, confort, dépendance -->
                 <h3>Les Défis de la VR</h3>
                 <p>
                     Outre la performance technique et la baisse des coûts, la VR doit résoudre des enjeux importants :
@@ -448,15 +500,19 @@
             <hr style="border-color: rgba(212, 175, 55, 0.2); margin: 3rem 0;"/>
 
             <!-- SECTION : OUTILS DE VEILLE (Cartes visuelles avec images plus thématiques) -->
+            <!-- Présente des sources externes sous forme de cartes cliquables -->
             <section class="tools-section">
                 <h2>Outils et Sources de Veille</h2>
                 
+                <!-- Petit texte d'introduction centré -->
                 <p style="text-align: center; margin-bottom: 2rem;">Voici les ressources et méthodes que j'utilise pour me tenir informé de l'actualité de la VR/MR.</p>
 
+                <!-- Grille de cartes : chaque carte est un lien vers une source -->
                 <div class="source-grid">
 
                     <!-- Carte 1 : Source technique -->
                     <div class="source-card">
+                        <!-- Lien externe : ouvre dans un nouvel onglet -->
                         <a href="https://realite-virtuelle.com/" target="_blank" class="source-link">
                             <img src="img logo rv com.png" alt="Actualité AR/VR" class="source-image">
                             <div class="source-content">
@@ -466,7 +522,7 @@
                         </a>
                     </div>
 
-                    <!-- Carte 2 : LinkedIn -->
+                    <!-- Carte 2 : LinkedIn (icône distante) -->
                     <div class="source-card">
                         <a href="https://www.linkedin.com/search/results/all/?keywords=r%C3%A9alit%C3%A9%20virtuelle" target="_blank" class="source-link">
                             <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" class="source-image">
@@ -491,7 +547,7 @@
                     <!-- Carte 4 : Source Générale (Industrie) -->
                     <div class="source-card">
                         <a href="https://reality.fr/blog/sante-medecine-realite-virtuelle/" target="_blank" class="source-link">
-                            <img src="Logo reality vr.png" class="source-image">
+                            <img src="Logo reality vr.png" class="source-image" alt="Reality.fr Logo">
                             <div class="source-content">
                                 <h3 class="source-title">Reality.fr </h3>
                                 <p class="source-description">La Réalité Virtuelle dans le domaine de la santé.</p>
@@ -502,10 +558,11 @@
                 </div>
             </section>
             
-            <!-- LIENS EXTERNES (Raccourcis) -->
+            <!-- LIENS EXTERNES (Raccourcis) : boutons vers pages officielles utiles -->
             <section class="external-links">
                 <h2>Ressources Directes</h2>
                 <ul>
+                    <!-- Chaque élément ouvre une ressource officielle dans un nouvel onglet -->
                     <li><a href="https://www.meta.com/fr/quest/" target="_blank">Site officiel Meta Quest</a></li>
                     <li><a href="https://www.apple.com/fr/vision-pro/" target="_blank">Apple Vision Pro</a></li>
                     <li><a href="https://fr.wikipedia.org/wiki/R%C3%A9alit%C3%A9_virtuelle" target="_blank">Article Wikipédia : Réalité Virtuelle</a></li>
@@ -516,10 +573,13 @@
         </main>
     </div>
 
+    <!-- Pied de page : informations légales et navigation secondaire -->
     <footer>
+        <!-- Partie gauche : copyright -->
         <div class="footer-left">
             <p>© 2025 Louka Lavenir - Tous droits réservés</p>
         </div>
+        <!-- Partie centrale : liens de navigation répétés pour accessibilité -->
         <div class="footer-center">
             <strong>Navigation :</strong>
             <a href="index.html">Accueil</a>
@@ -528,6 +588,7 @@
             <a href="veille.html">Veille technologique</a>
             <a href="mecontacter.html">Me contacter</a>
         </div>
+        <!-- Partie droite : mentions légales et politique de confidentialité -->
         <div class="footer-right">
             <a href="mentions.html">Mentions légales</a>
             <a href="politique.html">Politique de confidentialité</a>
