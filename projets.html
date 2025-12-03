@@ -134,7 +134,26 @@
       gap: 3rem; /* espacement entre cartes */
       margin-bottom: 3rem;
       padding: 0 2rem; /* respiration horizontale */
-      align-items: start; /* aligne le contenu en haut pour éviter décalages */
+      align-items: stretch; /* étire les items pour qu'ils aient la même hauteur */
+    }
+
+    /* Faire en sorte que chaque carte prenne 100% de la hauteur de sa cellule
+       et organise son contenu en colonne pour positionner correctement l'icône
+       flèche en bas (position absolute reste fonctionnel). */
+    .projects-grid .project {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Centrer verticalement certaines images/éléments médias dans la carte.
+       Utiliser la classe `.project-media` sur l'ancre contenant une image
+       pour qu'elle se place au milieu de l'espace disponible. */
+    .projects-grid .project .project-media {
+      margin-top: auto;
+      margin-bottom: auto;
+      display: block;
+      text-align: center;
     }
 
     @media (max-width: 800px) {
@@ -277,7 +296,7 @@
     <div class="projects-grid">
 
       <div class="project">
-        <h2>Création d'un Intranet pour la mairie</h2>
+        <h2>Conception d'un Intranet pour la mairie</h2>
         <p>Avec l’aide d’un collègue, j’ai conçu un nouvel intranet pour la mairie afin de remplacer l’ancien système.</p>
         <br><a href="Intranet.html"><img src="logo mandelieu bleu.jpg" style="max-width:40%; margin: 1rem auto; display:block;"></a>
         <a href="Intranet.html" class="arrow-link"><i class="fas fa-arrow-right"></i></a>
@@ -293,8 +312,15 @@
       <div class="project">
         <h2>Mise en place de GLPI sur un serveur</h2>
         <p>Installation et configuration de GLPI (gestionnaire de parc) sur un serveur Debian : configuration Apache, base de données, plugins et sécurité.</p>
-        <br><a href="https://github.com/Mediaschool-BTS-SISR-2025/Serveur_GLPI_Louka"><img src="img glpi.png" style="max-width:50%; margin: 1rem auto; display:block;"></a>
+        <br><a class="project-media" href="https://github.com/Mediaschool-BTS-SISR-2025/Serveur_GLPI_Louka"><img src="img glpi.png" style="max-width:50%; margin: 1rem auto; display:block;"></a>
         <a href="https://github.com/Mediaschool-BTS-SISR-2025/Serveur_GLPI_Louka" class="arrow-link"><i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="project">
+        <h2>Création, installation et configuration d'un domaine via Windows Server (2022)</h2>
+        <p>Installation d’un domaine sur Windows serveur / Windows vierge, (création d’utilisateurs dans Active Directory (Unités d’organisations, utilisateurs, groupes), création de ressource partagé (dossier dans cet exemple), ajout du service DHCP, validation de l’ensemble des services).</p>
+        <br><a href="https://github.com/zedkabc/Creation-installation-et-configuration-de-domaine-via-Windows-Server-2022"><img src="img ws22.webp" style="max-width:50%; margin: 1rem auto; display:block;"></a>
+        <a href="https://github.com/zedkabc/Creation-installation-et-configuration-de-domaine-via-Windows-Server-2022" class="arrow-link"><i class="fas fa-arrow-right"></i></a>
       </div>
 
     <!-- Tableau de synthèse -->

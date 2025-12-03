@@ -6,12 +6,26 @@
   <title>Portfolio Créatif</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
   <style>
+    /*
+      STYLE GÉNÉRAL - index.html
+      - Ce fichier contient la mise en page du portfolio d'accueil.
+      - Les commentaires insérés expliquent la structure et les choix
+        visuels sans modifier le comportement / rendu.
+    */
+
+    /* Reset global : retire marges et définit le box model */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box; 
     }
 
+    /*
+      Body principal :
+      - `min-height:100vh` assure que le footer reste en bas si peu de contenu.
+      - L'image de fond est appliquée ici et fixée pour couvrir l'ensemble.
+      - Les couleurs et la typographie sont définies pour l'identité visuelle.
+    */
     body {
       position: relative;
       min-height: 100vh;
@@ -27,6 +41,11 @@
       flex-direction: column;
     }
 
+    /*
+      Overlay sombre : couche fixe placée au-dessus de l'image de fond
+      pour améliorer le contraste du texte. `pointer-events:none` laisse
+      les clics passer au contenu en dessous.
+    */
     .overlay {
       position: fixed;
       top: 0;
@@ -38,11 +57,16 @@
       pointer-events: none;
     }
 
+    /*
+      Positionnement : header & main doivent être au-dessus de l'overlay,
+      d'où le `z-index:1` pour ces conteneurs.
+    */
     header, main {
       position: relative;
       z-index: 1;
     }
 
+    /* En-tête : contient la marque et la navigation principale */
     header {
       display: flex;
       justify-content: space-between;
@@ -50,6 +74,7 @@
       padding: 2rem;
     }
 
+    /* Liens de navigation stylés comme des boutons arrondis */
     nav a {
       text-decoration: none;
       padding: 0.5rem 1rem;
@@ -78,6 +103,10 @@
       line-height: 1.2;
     }
 
+    /*
+      Contenu principal : centré verticalement/horizontalement dans le corps.
+      Les classes `.welcome`, `.portfolio`, `.desc` structurent le hero.
+    */
     main {
       flex: 1;
       display: flex;
@@ -88,18 +117,21 @@
       padding: 4.5rem;
     }
 
+    /* Petit message d'accroche en haut du hero */
     .welcome {
       font-size: 4rem;
       margin-bottom: 1rem;
       text-transform: uppercase;
     }
 
+    /* Titre principal du hero (très visible) */
     .portfolio {
       font-size: 8rem;
       font-weight: 400;
       letter-spacing: 0.05em;
     }
 
+    /* Description courte sous le titre principal */
     .desc {
       margin-top: 2rem;
       font-size: 1.75rem;
@@ -108,6 +140,7 @@
       max-width: 500px;
     }
 
+    /* Bouton principal (call-to-action) pour afficher les projets */
     .btn {
       margin-top: 2rem;
       display: inline-block;
@@ -137,6 +170,7 @@
       color: #000;
     }
 
+    /* Pied de page : contient copyright et navigation secondaire */
     footer {
       flex-shrink: 0;
       background-color: rgba(0, 0, 0, 0.4);
@@ -197,6 +231,7 @@
       text-decoration: underline;
     }
 
+    /* Responsive : adaptations pour petits écrans */
     @media (max-width: 600px) {
       .portfolio {
         font-size: 2.5rem;
@@ -210,6 +245,7 @@
         font-size: 1.2rem;
       }
 
+      /* Navigation verticale sur mobile */
       nav {
         flex-direction: column;
       }
@@ -218,6 +254,7 @@
         margin-bottom: 0.5rem;
       }
 
+      /* Footer empilé sur mobile pour lecture confortable */
       footer {
         flex-direction: column;
         text-align: center;
@@ -233,12 +270,16 @@
 </head>
 <body>
 
+  <!-- Overlay sombre placé au-dessus de l'image de fond pour le contraste -->
   <div class="overlay"></div>
 
+  <!-- En-tête : nom / navigation -->
   <header>
+    <!-- Bloc marque (nom) -->
     <div class="brand">
       LOUKA<br />LAVENIR
     </div>
+    <!-- Navigation principale du site -->
     <nav>
       <a href="index.html">ACCUEIL</a>
       <a href="apropos.html">À PROPOS DE MOI</a>
@@ -248,16 +289,23 @@
     </nav>
   </header>
 
+  <!-- Contenu principal (hero) : message de bienvenue et CTA -->
   <main>
+    <!-- Ligne d'accroche courte -->
     <div class="welcome">BIENVENUE SUR MON</div>
+    <!-- Titre principal (grand) -->
     <div class="portfolio">PORTFOLIO</div>
+    <!-- Description brève / objectif -->
     <div class="desc">
       Découvrez qui je suis, ce que j'aime et quels sont mes objectifs.
     </div>
+    <!-- Bouton pour accéder à la page projets -->
     <a href="projets.html" class="btn">VOIR PLUS</a>
+    <!-- Lien direct vers le CV (ouvre dans un nouvel onglet) -->
     <a href="LOUKA LAVENIR CV.pdf" class="btn btn-cv" target="_blank">Voir mon CV</a>
   </main>
 
+  <!-- Pied de page : informations légales et navigation secondaire -->
   <footer>
     <div class="footer-left">
       <p>© 2025 Louka Lavenir - Tous droits réservés</p>
