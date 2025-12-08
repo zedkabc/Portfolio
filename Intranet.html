@@ -66,6 +66,19 @@
       color: #000;
     }
 
+    /* Layout des liens de navigation : flex, wrapping pour mobiles */
+    nav {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Empêche les liens de casser sur plusieurs lignes individuellement */
+    nav a {
+      white-space: nowrap;
+    }
+
     .content-wrapper {
       max-width: 1500px;
       margin: 4rem auto 5rem auto;
@@ -177,6 +190,23 @@
       }
       main {
         margin: 2rem 1rem;
+      }
+      /* Empilement et centrage de la navigation sur petits écrans */
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav {
+        display: flex; /* redéfini pour certains navigateurs */
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 0; /* laisse le gap gérer l'espacement */
+        width: auto;
       }
       footer {
         flex-direction: column;
