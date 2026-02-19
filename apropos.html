@@ -163,10 +163,13 @@
             grid-template-columns: repeat(3, 1fr);
             /* AJOUT DE MARGE ICI POUR SÉPARER LES DEUX RANGÉES EN TRANSPARENCE */
             margin-bottom: 20px; 
+            grid-auto-rows: 1fr; /* force lignes de même hauteur */
         }
 
         .skills-grid-4 {
-            grid-template-columns: repeat(4, 1fr);
+            /* Maintenant 3 colonnes pour correspondre à la première grille */
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 1fr;
         }
 
         .skill-tile {
@@ -175,6 +178,10 @@
             padding: 20px;
             border-radius: 12px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 220px; /* assure une hauteur uniforme entre tuiles */
             transition: transform 0.25s ease, box-shadow 0.25s ease;
             border: 1px solid rgba(212, 175, 55, 0.5); 
         }
@@ -196,17 +203,21 @@
             margin-bottom: 8px;
         }
 
-        .progress-bar {
-            height: 8px;
-            width: 100%;
-            background: #555;
-            border-radius: 5px;
-            overflow: hidden;
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0 0;
+            display: grid;
+            gap: 8px;
+            text-align: left;
         }
 
-        .progress-fill {
-            height: 100%;
-            background: #d4af37;
+        .skill-list .skill-point {
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            font-size: 0.95rem;
         }
 
         footer {
@@ -357,48 +368,66 @@
             <!-- PREMIÈRE GRILLE (3 colonnes) -->
             <div class="skills-grid">
                 <div class="skill-tile">
-                    <div class="skill-emoji">💻</div>
-                    <div class="skill-name">Windows PowerShell</div>
-                    <div class="progress-bar"><div class="progress-fill" style="width:70%"></div></div>
+                    <div class="skill-emoji">🐧</div>
+                    <div class="skill-name">Linux</div>
+                    <ul class="skill-list">
+                        <li class="skill-point">Utilisation ligne de commande</li>
+                        <li class="skill-point">Déploiement d'application sur serveur Debian</li>
+                        <li class="skill-point">Administration système de base</li>
+                    </ul>
                 </div>
 
                 <div class="skill-tile">
                     <div class="skill-emoji">🛠️</div>
                     <div class="skill-name">GLPI</div>
-                    <div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div>
+                    <ul class="skill-list">
+                        <li class="skill-point">Gestion des tickets</li>
+                        <li class="skill-point">Gestion des utilisateurs</li>
+                        <li class="skill-point">Supervision du parc informatique</li>
+                    </ul>
                 </div>
 
                 <div class="skill-tile">
                     <div class="skill-emoji">🌐</div>
                     <div class="skill-name">Cisco Packet Tracer</div>
-                    <div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div>
+                    <ul class="skill-list">
+                        <li class="skill-point">Conception de réseaux simples</li>
+                        <li class="skill-point">Configuration routeurs et switchs</li>
+                        <li class="skill-point">Utilisation VLAN et sous-réseaux</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- DEUXIÈME GRILLE (4 colonnes) -->
+            <!-- DEUXIÈME GRILLE (3 colonnes) -->
             <div class="skills-grid-4">
-                <div class="skill-tile">
-                    <div class="skill-emoji">📄</div>
-                    <div class="skill-name">Microsoft Office</div>
-                    <div class="progress-bar"><div class="progress-fill" style="width:99%"></div></div>
-                </div>
-
                 <div class="skill-tile">
                     <div class="skill-emoji">🌍</div>
                     <div class="skill-name">WordPress</div>
-                    <div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div>
+                    <ul class="skill-list">
+                        <li class="skill-point">Création de sites</li>
+                        <li class="skill-point">Thèmes et plugins</li>
+                        <li class="skill-point">Gestion utilisateurs et rôles</li>
+                    </ul>
                 </div>
 
                 <div class="skill-tile">
-                    <div class="skill-emoji">🐧</div>
-                    <div class="skill-name">Linux</div>
-                    <div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div>
+                    <div class="skill-emoji">📄</div>
+                    <div class="skill-name">Microsoft Office</div>
+                    <ul class="skill-list">
+                        <li class="skill-point">Structuration de procédures informatiques</li>
+                        <li class="skill-point">Gestion collaborative de documents</li>
+                        <li class="skill-point">Word / Excel avancé</li>
+                    </ul>
                 </div>
 
                 <div class="skill-tile">
                     <div class="skill-emoji">🖥️</div>
                     <div class="skill-name">Windows Server</div>
-                    <div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div>
+                    <ul class="skill-list">
+                        <li class="skill-point">Configuration Active Directory</li>
+                        <li class="skill-point">Gestion des groupes et utilisateurs</li>
+                        <li class="skill-point">Gestion DHCP et DNS</li>
+                    </ul>
                 </div>
             </div>
 
