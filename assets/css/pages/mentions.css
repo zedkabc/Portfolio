@@ -1,0 +1,193 @@
+body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      background-image: url('../../../images/mentions/arriere-plan-brillant-noir-et.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #d4af37;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-right: 0.5rem;
+      color: #d4af37;
+      border: 1px solid #d4af37;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    nav a[href="mentions.html"] {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    /* Layout des liens de navigation : flex, wrapping pour mobiles */
+    nav {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Empêche les liens de casser sur plusieurs lignes individuellement */
+    nav a {
+      white-space: nowrap;
+    }
+
+    .brand {
+      font-weight: 700;
+      text-align: right;
+      line-height: 1.2;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+      color: #fff;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      flex-shrink: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #d4af37;
+      padding: 2rem 1rem;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-center {
+      text-align: center;
+    }
+
+    .footer-center a {
+      display: block;
+      margin: 0.25rem 0;
+      color: hwb(46 24% 5%);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer-center a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-right a {
+      color: #f0c94b;
+      text-decoration: none;
+      display: block;
+      margin: 0.25rem 0;
+    }
+
+    .footer-right a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      /* Empilement et centrage de la navigation + header sur petits écrans */
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav {
+        display: flex; /* redéfini pour certains navigateurs */
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 0; /* laisse le gap gérer l'espacement */
+        width: auto;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-left,
+      .footer-center,
+      .footer-right {
+        text-align: center;
+      }
+    }

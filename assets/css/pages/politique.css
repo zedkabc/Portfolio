@@ -1,0 +1,249 @@
+/*
+      FEUILLE DE STYLES POUR politique.html
+      - Gestion du layout général (body, header, main, footer)
+      - Styles de la navigation avec support mobile
+      - Adaptations responsives pour petits écrans (≤600px)
+    */
+
+    /* Reset global : retire les marges/paddings par défaut */
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      background-image: url('../../../images/politique/arriere-plan-brillant-noir-et.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #d4af37;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Overlay sombre : couche fixe qui améliore le contraste du texte sur l'image de fond */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+      pointer-events: none; /* Permet aux clics de passer à travers */
+    }
+
+    /* En-tête : contient la marque et la navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2rem;
+      position: relative;
+      z-index: 1; /* Au-dessus de l'overlay */
+    }
+
+    /* Lien de navigation : style bouton arrondi dorée */
+    nav a {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-right: 0.5rem;
+      color: #d4af37;
+      border: 1px solid #d4af37;
+      transition: background 0.3s;
+    }
+
+    /* Effet au survol : fond dorée, texte noir */
+    nav a:hover {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    /* Lien actif : mise en évidence du bouton "Politique de confidentialité" */
+    nav a[href="politique.html"] {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    /* Layout des liens de navigation : flex, wrapping pour mobiles */
+    nav {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap; /* Les boutons passent à la ligne si nécessaire */
+    }
+
+    /* Empêche les liens de casser sur plusieurs lignes individuellement */
+    nav a {
+      white-space: nowrap;
+    }
+
+    /* Marque/Logo : aligné à droite */
+    .brand {
+      font-weight: 700;
+      text-align: right;
+      line-height: 1.2;
+    }
+
+    /* Contenu principal : boîte centrée avec fond semi-transparent */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    /* Titre principal : grand et voyant */
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Sous-titres : style secondaire */
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+      color: #fff;
+    }
+
+    /* Paragraphes : lisibilité optimale */
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Pied de page : fixe en bas avec navigation secondaire */
+    footer {
+      flex-shrink: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #d4af37;
+      padding: 2rem 1rem;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Sections du footer : réparties équitablement */
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-center {
+      text-align: center;
+    }
+
+    /* Liens du footer : bloc pour empiler verticalement */
+    .footer-center a {
+      display: block;
+      margin: 0.25rem 0;
+      color: hwb(46 24% 5%);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer-center a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-right a {
+      color: #f0c94b;
+      text-decoration: none;
+      display: block;
+      margin: 0.25rem 0;
+    }
+
+    .footer-right a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* ======================== RESPONSIVE MOBILE ======================== */
+    @media (max-width: 600px) {
+      /* En-tête empilé verticalement sur mobile */
+      header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem; /* Réduit pour économiser l'espace */
+      }
+
+      /* Navigation empilée verticalement et centrée */
+      nav {
+        display: flex; /* redéfini pour certains navigateurs */
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      /* Boutons de navigation : plus petits sur mobile */
+      nav a {
+        margin: 0; /* laisse le gap gérer l'espacement */
+        width: auto;
+        padding: 0.4rem 0.8rem; /* Réduit pour compacter */
+        font-size: 0.9rem; /* Police plus petite */
+      }
+
+      /* Contenu principal : ajusté pour mobile */
+      main {
+        margin: 2rem 1rem; /* Marges réduites */
+        padding: 1.5rem 1rem; /* Padding réduit */
+        max-width: 100%; /* Occupe toute la largeur */
+      }
+
+      /* Titre principal : réduit sur mobile */
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        word-wrap: break-word; /* Permet le retour à la ligne */
+        overflow-wrap: break-word;
+      }
+
+      /* Sous-titres : réduits sur mobile */
+      h2 {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+      }
+
+      /* Paragraphes : ajustés pour lire sur mobile */
+      p {
+        font-size: 1rem;
+      }
+
+      /* Pied de page : empilé et centré sur mobile */
+      footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem; /* Réduit pour économiser l'espace */
+      }
+
+      /* Sections du footer : toutes centrées sur mobile */
+      .footer-left,
+      .footer-center,
+      .footer-right {
+        text-align: center;
+      }
+    }

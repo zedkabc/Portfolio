@@ -1,0 +1,212 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      background: url('../../../images/intranet/fond-de-produit-marron.jpg') center/cover no-repeat fixed;
+      color: #d4af37;
+      overflow-x: hidden;
+    }
+
+    .page-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand {
+      font-weight: 700;
+      text-align: right;
+      line-height: 1.2;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-right: 0.5rem;
+      color: #d4af37;
+      background-color: transparent;
+      border: 1px solid #d4af37;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    nav a[href="intranet.html"] {
+      background-color: #d4af37;
+      color: #000;
+    }
+
+    /* Layout des liens de navigation : flex, wrapping pour mobiles */
+    nav {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Empêche les liens de casser sur plusieurs lignes individuellement */
+    nav a {
+      white-space: nowrap;
+    }
+
+    .content-wrapper {
+      max-width: 1500px;
+      margin: 4rem auto 5rem auto;
+      padding: 2rem 3rem;
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 12px;
+      position: relative;
+      z-index: 1;
+      color: #d4af37;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+      margin-bottom: 1rem;
+      list-style-type: disc;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      flex-shrink: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #d4af37;
+      padding: 2rem 1rem;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-center {
+      text-align: center;
+    }
+
+    .footer-center strong {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-center a {
+      display: block;
+      margin: 0.25rem 0;
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer-center a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-right a {
+      display: block;
+      color: #d4af37;
+      text-decoration: none;
+      margin: 0.25rem 0;
+    }
+
+    .footer-right a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      main {
+        margin: 2rem 1rem;
+      }
+      /* Empilement et centrage de la navigation sur petits écrans */
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav {
+        display: flex; /* redéfini pour certains navigateurs */
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 0; /* laisse le gap gérer l'espacement */
+        width: auto;
+      }
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-left,
+      .footer-center,
+      .footer-right {
+        text-align: center;
+        min-width: auto;
+      }
+    }
