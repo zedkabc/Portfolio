@@ -24,6 +24,8 @@ body {
   background-color: var(--site-bg);
   color: var(--site-text);
   line-height: 1.65;
+  position: relative;
+  isolation: isolate;
 }
 
 body,
@@ -433,6 +435,7 @@ footer a:focus-visible {
   .project-tags {
     justify-content: center;
   }
+
 }
 
 @media (max-width: 600px) {
@@ -455,6 +458,7 @@ footer a:focus-visible {
   footer {
     padding: 1.5rem 1rem !important;
   }
+
 }
 
 @media (prefers-reduced-motion: reduce) {

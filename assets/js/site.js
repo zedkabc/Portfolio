@@ -3,6 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector("header");
   const nav = document.querySelector("header nav");
   const currentPage = window.location.pathname.split("\\").pop().split("/").pop() || "index.html";
+  const pageSlug = currentPage.replace(".html", "").toLowerCase();
+
+  body.dataset.page = pageSlug;
+  if (!body.classList.contains(`page-${pageSlug}`)) {
+    body.classList.add(`page-${pageSlug}`);
+  }
 
   if (!document.querySelector(".skip-link")) {
     const skipLink = document.createElement("a");
