@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio Créatif</title>
+  <meta name="description" content="Portfolio de Louka Lavenir, étudiant en BTS SIO option SISR en alternance, avec ses projets, compétences et veille technologique." />
+  <title>Louka Lavenir | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
   <style>
     /*
@@ -290,8 +291,9 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
+<body class="page-home">
 
   <!-- Overlay sombre placé au-dessus de l'image de fond pour le contraste -->
   <div class="overlay"></div>
@@ -313,19 +315,32 @@
   </header>
 
   <!-- Contenu principal (hero) : message de bienvenue et CTA -->
-  <main>
+  <main id="main-content">
+    <div class="section-kicker">BTS SIO • SISR • Alternance</div>
     <!-- Ligne d'accroche courte -->
     <div class="welcome">BIENVENUE SUR MON</div>
     <!-- Titre principal (grand) -->
     <div class="portfolio">PORTFOLIO</div>
     <!-- Description brève / objectif -->
     <div class="desc">
-      Découvrez qui je suis, ce que j'aime et quels sont mes objectifs.
+      Découvrez mon parcours, mes projets en systèmes et réseaux, ainsi que ma veille sur les technologies qui m'inspirent.
     </div>
-    <!-- Bouton pour accéder à la page projets -->
-    <a href="projets.html" class="btn">VOIR PLUS</a>
-    <!-- Lien direct vers le CV (ouvre dans un nouvel onglet) -->
-    <a href="LOUKA LAVENIR CV.pdf" class="btn btn-cv" target="_blank">Voir mon CV</a>
+    <div class="hero-badges">
+      <div class="hero-badge">Administration systèmes</div>
+      <div class="hero-badge">Support et infrastructure</div>
+      <div class="hero-badge">Projets concrets en alternance</div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>4</strong> projets mis en avant</div>
+      <div class="hero-stat"><strong>1</strong> alternance en collectivité</div>
+      <div class="hero-stat"><strong>1</strong> veille orientée VR / MR</div>
+    </div>
+    <div class="hero-actions">
+      <!-- Bouton pour accéder à la page projets -->
+      <a href="projets.html" class="btn">Découvrir mes projets</a>
+      <!-- Lien direct vers le CV (ouvre dans un nouvel onglet) -->
+      <a href="LOUKA LAVENIR CV.pdf" class="btn btn-cv" target="_blank" rel="noopener noreferrer">Voir mon CV</a>
+    </div>
   </main>
 
   <!-- Pied de page : informations légales et navigation secondaire -->
@@ -347,5 +362,6 @@
     </div>
   </footer>
 
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>
