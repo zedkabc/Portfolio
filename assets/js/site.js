@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const navLinks = [...nav.querySelectorAll("a[href]")];
     navLinks.forEach((link) => {
       const href = link.getAttribute("href");
-      if (href === currentPage) {
+      const isVeilleSubPage = href === "veille.html" && pageSlug.startsWith("veille");
+      if (href === currentPage || isVeilleSubPage) {
         link.setAttribute("aria-current", "page");
       }
     });
@@ -95,11 +96,12 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const disableScrollReveal = pageSlug.startsWith("veille");
 
   if (revealTargets.length > 0) {
     revealTargets.forEach((item) => item.classList.add("reveal-on-scroll"));
 
-    if (reducedMotion || !("IntersectionObserver" in window)) {
+    if (disableScrollReveal || reducedMotion || !("IntersectionObserver" in window)) {
       revealTargets.forEach((item) => item.classList.add("is-visible"));
     } else {
       const observer = new IntersectionObserver(

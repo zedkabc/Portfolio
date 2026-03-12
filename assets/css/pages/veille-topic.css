@@ -1,0 +1,409 @@
+/*
+  Styles partages pour les pages de veille detaillees.
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('../../../images/veille/arriere-plan-brillant-noir-et.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    color: #d4af37;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 0;
+    pointer-events: none;
+}
+
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    background-color: #d4af37;
+    color: #000;
+}
+
+.brand {
+    font-weight: 700;
+    text-align: right;
+    line-height: 1.2;
+}
+
+.content-wrapper {
+    max-width: 1100px;
+    margin: 2rem auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    padding: 3rem;
+    flex-grow: 1;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+main {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header-icon {
+    font-size: 4rem;
+    color: #d4af37;
+    margin-bottom: 1.5rem;
+}
+
+.page-intro {
+    max-width: 760px;
+    margin: 0 auto 2rem;
+}
+
+.top-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-block;
+    padding: 0.8rem 1.3rem;
+    border-radius: 999px;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.45);
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+    background: #d4af37;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #fff;
+    text-align: left;
+}
+
+.illustration {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 10px;
+    margin: 1.5rem auto;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.illustration-small {
+    max-width: 360px;
+    margin: 1rem auto 2rem auto;
+}
+
+.illustration-tiny {
+    max-width: 250px;
+    float: right;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    text-align: left;
+    margin: 0 auto 2rem auto;
+    max-width: 100%;
+    padding-left: 1.2rem;
+    list-style: disc;
+}
+
+li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 0.4rem;
+}
+
+li a {
+    color: #d4af37;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.tools-section h2 {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.source-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.source-card {
+    width: 200px;
+    background: rgba(17, 17, 17, 0.8);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.source-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+}
+
+.source-link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+.source-image {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.source-link[href*="linkedin.com"] .source-image,
+.source-link[href*="huggingface.co"] .source-image,
+.source-link[href*="openai.com"] .source-image,
+.source-link[href*="anthropic.com"] .source-image,
+.source-link[href*="microsoft.com"] .source-image {
+    object-fit: contain;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.source-content {
+    padding: 1rem;
+}
+
+.source-title {
+    font-size: 1.1rem;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.source-description {
+    font-size: 0.85rem;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+.external-links ul {
+    text-align: center;
+    padding: 0;
+    list-style: none;
+}
+
+.external-links li {
+    margin-bottom: 0.5rem;
+}
+
+.external-links li a {
+    display: block;
+    max-width: 420px;
+    margin: 0.5rem auto;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #d4af37;
+}
+
+.external-links li a:hover {
+    background: rgba(212, 175, 55, 0.3);
+    text-decoration: none;
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #d4af37;
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    box-sizing: border-box;
+    border-top: 2px solid #d4af37;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.footer-center a {
+    display: block;
+    margin: 0.25rem 0;
+    color: #d3a920;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-center a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-right a {
+    display: block;
+    color: #d4af37;
+    text-decoration: none;
+    margin: 0.25rem 0;
+}
+
+.footer-right a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 0;
+        width: auto;
+    }
+
+    .content-wrapper {
+        margin: 1rem;
+        padding: 1.5rem 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .header-icon {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    h3 {
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        text-align: center;
+    }
+
+    .source-card {
+        width: 100%;
+    }
+
+    .illustration-tiny {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

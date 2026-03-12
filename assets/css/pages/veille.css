@@ -1,438 +1,271 @@
 /*
-                    FEUILLE DE STYLES PRINCIPALE POUR veille.html
-                    - Contient les règles de mise en page (body, header, main, footer)
-                    - Styles pour les cartes de sources, illustrations et responsive
-                    - Commentaires ajoutés pour expliquer chaque bloc et faciliter
-                        la maintenance future.
-                */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  Styles pour la page d'entree des veilles.
+*/
 
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            font-family: 'Montserrat', sans-serif;
-            background-image: url('../../../images/veille/arriere-plan-brillant-noir-et.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: scroll; /* Scroll pour éviter les problèmes de fond */
-            color: #d4af37;
-            position: relative;
-            overflow-x: hidden;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-                /*
-                    Overlay sombre : couche fixe couvrant tout l'arrière-plan.
-                    Objectif : améliorer le contraste du texte par-dessus l'image.
-                    `pointer-events: none` permet de laisser la page interagir normalement.
-                */
-                .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.75); /* Légèrement plus sombre pour le contraste */
-            z-index: 0;
-            pointer-events: none;
-        }
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('../../../images/veille/arriere-plan-brillant-noir-et.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    color: #d4af37;
+    position: relative;
+    overflow-x: hidden;
+}
 
-                /*
-                    Empilement (z-index) : header, main et footer doivent se placer
-                    au-dessus de l'overlay fixe situé en z-index 0.
-                */
-                header, main, footer {
-                        position: relative;
-                        z-index: 1; 
-                }
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 0;
+    pointer-events: none;
+}
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 2rem;
-        }
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
 
-        nav a {
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-right: 0.5rem;
-            color: #d4af37;
-            border: 1px solid #d4af37;
-            transition: background 0.3s;
-        }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+}
 
-        nav a:hover {
-            background-color: #d4af37;
-            color: #000;
-        }
+nav {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
-        nav a[href="veille.html"] {
-            background-color: #d4af37;
-            color: #000;
-        }
+nav a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
 
-        /* Layout des liens de navigation : flex, wrapping pour mobiles */
-        nav {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+nav a:hover,
+nav a[href="veille.html"] {
+    background-color: #d4af37;
+    color: #000;
+}
 
-        /* Empêche les liens de casser sur plusieurs lignes individuellement */
-        nav a {
-            white-space: nowrap;
-        }
+.brand {
+    font-weight: 700;
+    text-align: right;
+    line-height: 1.2;
+}
 
-        .brand {
-            font-weight: 700;
-            text-align: right;
-            line-height: 1.2;
-        }
+.content-wrapper {
+    max-width: 1100px;
+    margin: 2rem auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    padding: 3rem;
+    flex-grow: 1;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
 
-        /* Conteneur principal de la veille : boîte centrale avec fond semi-translucide */
-        .content-wrapper {
-            max-width: 1100px;
-            margin: 2rem auto;
-            background-color: rgba(0, 0, 0, 0.7); 
-            border-radius: 12px;
-            padding: 3rem;
-            flex-grow: 1;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); /* Effet brillant */
-        }
+main {
+    text-align: center;
+}
 
-        main {
-            text-align: center;
-        }
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
 
-        /* Titre principal : style voyant pour la page de veille */
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Icône au-dessus du titre pour renforcer l'identité visuelle */
-        .header-icon {
-            font-size: 4rem;
-            color: #d4af37;
-            margin-bottom: 1.5rem;
-        }
+.header-icon {
+    font-size: 4rem;
+    color: #d4af37;
+    margin-bottom: 1.5rem;
+}
 
-        /* Petit espace spécifique avant le 2ᵉ h2 ("Sujet : Le futur...")
-           pour éviter que le titre ne colle trop au paragraphe précédent */
-        .content-wrapper h2:nth-of-type(2) {
-            margin-top: 1.25rem;
-        }
+.page-intro {
+    max-width: 760px;
+    margin: 1rem auto 0;
+    font-size: 1.1rem;
+}
 
-        /* Petit espace spécifique sous les 3 premiers h2 du contenu */
-        .content-wrapper h2:nth-of-type(-n+3) {
-            margin-bottom: 1.1rem; /* espace entre le h2 et le paragraphe suivant */
-        }
+.veille-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
 
+.veille-card {
+    padding: 2rem;
+    border-radius: 18px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: rgba(12, 12, 12, 0.68);
+    text-align: center;
+}
 
-    footer {
-      flex-shrink: 0;
-      background-color: rgba(0, 0, 0, 0.4);
-      color: #d4af37;
-      padding: 2rem 1rem;
-      font-size: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      box-sizing: border-box;
-      position: relative;
-      z-index: 1;
+.veille-card-icon {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.veille-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.veille-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #f1e2ac;
+}
+
+.veille-card-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.45);
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.veille-card-link:hover,
+.veille-card-link:focus-visible {
+    background: #d4af37;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #d4af37;
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    box-sizing: border-box;
+    border-top: 2px solid #d4af37;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.footer-center a {
+    display: block;
+    margin: 0.25rem 0;
+    color: #d3a920;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-center a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-right a {
+    display: block;
+    color: #d4af37;
+    text-decoration: none;
+    margin: 0.25rem 0;
+}
+
+.footer-right a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
     }
 
-        h3 {
-            font-size: 1.8rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: #fff; /* Sous-titres en blanc pour ressortir */
-            text-align: left;
-        }
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
 
-        /* Sous-titres (h3) : style secondaire pour sections internes */
-        h3 {
-            font-size: 1.8rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: #fff; /* Sous-titres en blanc pour ressortir */
-            /* alignement contrôlé globalement par .content-wrapper rules */
-        }
-        .illustration {
-            width: 100%;
-            max-width: 700px;
-            height: auto;
-            border-radius: 10px;
-            margin: 1.5rem auto;
-            display: block;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-        
-        /* Styles spécifiques pour les illustrations ajoutées */
-        .illustration-small {
-            /* Réduire la taille des illustrations secondaires (learning / jeu) */
-            max-width: 360px;
-            margin: 1rem auto 2rem auto;
-        }
+    nav a {
+        margin: 0;
+        width: auto;
+    }
 
-        .illustration-tiny {
-            max-width: 250px;
-            float: right;
-            margin-left: 1rem;
-            margin-bottom: 0.5rem;
-        }
+    .content-wrapper {
+        margin: 1rem;
+        padding: 1.5rem 1rem;
+    }
 
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
 
-        ul {
-            text-align: left;
-            margin: 0 auto 2rem auto;
-            max-width: 100%;
-            padding-left: 1.2rem;
-            list-style: disc; /* Remettre des puces par défaut */
-        }
+    .header-icon {
+        font-size: 3rem;
+    }
 
-        li {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 0.4rem;
-        }
+    .veille-grid {
+        grid-template-columns: 1fr;
+    }
 
-        li a {
-            color: #d4af37;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
 
-        li a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        /* --- STYLES DES CARTES DE SOURCES --- */
-        .tools-section h2 {
-            margin-top: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .source-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-bottom: 3rem;
-        }
-
-        .source-card {
-            width: 200px; /* Taille fixe */
-            background: rgba(17, 17, 17, 0.8);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .source-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
-        }
-
-        .source-link {
-            color: inherit; 
-            text-decoration: none;
-            display: block;
-        }
-
-        .source-image {
-            width: 100%;
-            height: 100px;
-            object-fit: cover;
-            object-position: center;
-        }
-        
-        .source-link[href*="linkedin.com"] .source-image {
-            /* Style spécifique pour LinkedIn ou les icônes */
-            object-fit: contain;
-            background-color: #fff;
-            padding: 10px;
-        }
-
-        .source-content {
-            padding: 1rem;
-        }
-
-        .source-title {
-            font-size: 1.1rem;
-            color: #d4af37;
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-        }
-
-        .source-description {
-            font-size: 0.85rem;
-            color: #ccc;
-            line-height: 1.4;
-        }
-        /* --- FIN DES STYLES DES CARTES --- */
-        
-        /* Style pour les liens externes sous forme de liste */
-        .external-links ul {
-            text-align: center;
-            padding: 0;
-            list-style: none; /* Retirer les puces de la liste de liens externes */
-        }
-        .external-links li {
-            margin-bottom: 0.5rem;
-        }
-        .external-links li a {
-            display: block;
-            max-width: 400px; /* Limiter la largeur des boutons de liens externes */
-            margin: 0.5rem auto;
-            background: rgba(212, 175, 55, 0.1);
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
-            border: 1px solid #d4af37;
-        }
-        .external-links li a:hover {
-            background: rgba(212, 175, 55, 0.3);
-            text-decoration: none;
-        }
-
-
-        footer {
-            flex-shrink: 0;
-            background-color: rgba(0, 0, 0, 0.9); /* Très sombre */
-            color: #d4af37;
-            padding: 2rem 1rem;
-            font-size: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            box-sizing: border-box;
-            border-top: 2px solid #d4af37; /* Ligne pour séparer */
-        }
-
-        .footer-left,
-        .footer-center,
-        .footer-right {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .footer-left {
-            text-align: left;
-        }
-
-        .footer-center {
-            text-align: center;
-        }
-
-        .footer-center a {
-            display: block;
-            margin: 0.25rem 0;
-            color: #d3a920;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .footer-center a:hover {
-            text-decoration: underline;
-            color: #ffffff;
-        }
-
-        .footer-right {
-            text-align: right;
-        }
-
-        .footer-right a {
-            display: block;
-            color: #d4af37;
-            text-decoration: none;
-            margin: 0.25rem 0;
-        }
-
-        .footer-right a:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            /* Empilement et centrage de la navigation + header sur petits écrans */
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav {
-                display: flex; /* redéfini pour certains navigateurs */
-                flex-direction: column;
-                gap: 0.5rem;
-                align-items: center;
-            }
-
-            nav a {
-                margin: 0; /* laisse le gap gérer l'espacement */
-                width: auto;
-            }
-
-            .content-wrapper {
-                margin: 1rem;
-                padding: 1.5rem 1rem;
-            }
-            h1 {
-                font-size: 2rem;
-                text-align: center;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-            }
-            .header-icon {
-                font-size: 3rem;
-            }
-            h2 {
-                font-size: 1.5rem;
-                text-align: center;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-            }
-            h3 {
-                text-align: center;
-                font-size: 1.4rem;
-            }
-            p {
-                font-size: 1rem;
-                text-align: center;
-            }
-            footer {
-                flex-direction: column;
-                text-align: center;
-            }
-            .footer-left,
-            .footer-center,
-            .footer-right {
-                text-align: center;
-            }
-            .source-card {
-                width: 100%;
-            }
-            .illustration-tiny {
-                float: none;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        text-align: center;
+    }
+}
