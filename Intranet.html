@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Projet de refonte d'un intranet pour la mairie de Mandelieu-la-Napoule : besoin, choix de solution, mise en place et résultats." />
-  <title>Projet intranet | Louka Lavenir</title>
+  <meta name="description" content="Projet BTS SIO SISR : modernisation d'un intranet avec approche infrastructure, sécurité, réseau, exploitation et continuité de service." />
+  <title>Projet intranet SISR | Louka Lavenir</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/pages/intranet.css">
@@ -28,112 +28,112 @@
     </header>
 
     <main id="main-content" class="content-wrapper">
-      <div class="section-kicker">Projet détaillé</div>
-      <h1>Projet : Nouvel intranet pour la Mairie de Mandelieu-la-Napoule</h1>
+      <div class="section-kicker">Projet BTS SIO SISR</div>
+      <h1>Projet : Modernisation de l'intranet avec une approche systèmes et réseaux</h1>
 
-      <h2>Définition (besoin)</h2>
+      <h2>Contexte et besoin d'infrastructure</h2>
       <p>
-        La DSIT avait pour projet en 2025 l’implémentation d’un nouvel intranet au sein de la collectivité en raison de l’obsolescence du serveur actuel, qui ne répond plus aux exigences en matière de cybersécurité.
+        En 2025, la DSIT a lancé la modernisation de l'intranet de la collectivité car l'environnement existant reposait sur une infrastructure devenue obsolète. Le serveur en place ne permettait plus d'assurer un niveau de sécurité, de disponibilité et de maintenabilité conforme aux exigences actuelles.
       </p>
       <p>
-        L’objectif étant d’opter vers un intranet moderne, sécurisée et évolutive avec une plateforme adaptée (open source ou commerciale) en fonction des besoins, du budget et de la sécurité.
+        L'objectif était de mettre en service une plateforme intranet plus robuste, sécurisée et évolutive, en tenant compte des contraintes réseau, des droits d'accès, des sauvegardes, du budget et des besoins métier des services.
       </p>
       <p>
-        Le SI Métiers m’a confié la mission de mise en place du nouvel intranet.
+        Dans ce cadre, le SI Métiers m'a confié la mission technique de déploiement et d'exploitation du nouvel intranet, avec une logique clairement orientée SISR.
       </p>
 
-      <h2>Étude d’opportunité et proposition</h2>
+      <h2>Étude de solution et cadrage technique</h2>
       <ul>
-        <li>Mon choix s’est porté sur WordPress car l’utilisation est simple même pour ceux qui ne sont pas experts en développement web. Cela facilite la gestion quotidienne du contenu et la mise à jour de l’intranet par des utilisateurs non techniques.</li>
-        <li>Flexibilité et personnalisation : WordPress permet d’adapter l’intranet aux besoins spécifiques de votre organisation, qu’il s’agisse de gestion de documents, de forums, de calendriers ou d’autres fonctionnalités collaboratives.</li>
-        <li>Coût maîtrisé : WordPress est une plateforme open source, ce qui signifie qu’elle est gratuite à l’achat.</li>
-        <li>Communauté et support : La communauté WordPress est très active, ce qui garantit un accès à une multitude de ressources, de mises à jour régulières, et de solutions aux éventuels problèmes techniques.</li>
-        <li>Sécurité et évolutivité : Bien que la sécurité doive être une priorité, WordPress propose de nombreux plugins et bonnes pratiques pour renforcer la sécurité. De plus, la plateforme peut évoluer avec l’organisation de la commune en ajoutant des fonctionnalités ou en augmentant la capacité selon les besoins.</li>
-        <li>Intégration avec d’autres outils : WordPress peut facilement s’intégrer avec d’autres systèmes ou outils que vous utilisez déjà, comme des CRM, des outils de messagerie ou des plateformes de stockage.</li>
+        <li>La solution retenue repose sur WordPress, non pas uniquement pour l'édition de contenu, mais pour sa capacité à être hébergé proprement sur une architecture maîtrisée (serveur web, base de données, gestion des certificats, sauvegardes et supervision).</li>
+        <li>L'approche SISR a privilégié la simplicité d'exploitation pour les utilisateurs tout en conservant une administration technique centralisée (gestion des comptes, contrôle des accès et maintenance préventive).</li>
+        <li>Le choix open source permet de réduire les coûts de licence tout en gardant la possibilité d'intégrer des mécanismes de sécurisation adaptés à une collectivité.</li>
+        <li>La maturité de l'écosystème WordPress facilite la veille sécurité, les mises à jour correctives et le maintien en condition opérationnelle dans la durée.</li>
+        <li>La plateforme peut évoluer selon la charge et les nouveaux besoins métier, avec une logique de scalabilité et de continuité de service.</li>
+        <li>L'intranet s'intègre avec l'existant numérique (messagerie, stockage et services internes), ce qui permet de garder une cohérence du SI.</li>
       </ul>
 
-      <h2>Mise en place</h2>
+      <h2>Mise en place de l'environnement</h2>
 
-      <h3>Analyse des besoins</h3>
+      <h3>Recueil des besoins et contraintes SI</h3>
       <p>
-        Après la réunion de lancement avec l’équipe projet (Cabinet du Maire, Directeur Générale des Services, Direction de la communication, DSIT et SI Métiers) afin de bien comprendre les attentes et enjeux, j’ai recensé dans un premier temps l’existant de l’ancien intranet et rencontré les services pour identifier les besoins et les attentes. Quelles informations doivent être reprises ? Sont-elles toujours pertinentes et à jour ? …
+        Après la réunion de lancement avec l'équipe projet (Cabinet du Maire, DGS, Direction de la communication, DSIT et SI Métiers), j'ai réalisé un audit de l'existant : services utilisés, documents critiques, organisation des droits et habitudes de connexion des agents. L'objectif était d'identifier ce qui devait être migré, nettoyé ou requalifié.
       </p>
       <p>
-        Après cet audit, nous nous sommes réunis à nouveau avec l’équipe projet. J’ai expliqué le choix de la solution WordPress et rédigé un cahier des charges qu’ils ont validés.
+        À l'issue de cette phase, j'ai formalisé un cahier des charges technique et fonctionnel validant le choix de la solution, les exigences de sécurité, le plan de migration et les modalités d'administration.
       </p>
       <p>
-        À la demande du service communication, le groupe projet a suivi une formation WordPress (Administrer son site). Le but étant d’être totalement autonome dans la gestion et la mise à jour de son site.
+        Une formation a été organisée pour les référents métier afin d'assurer l'autonomie sur la publication, tout en séparant clairement les rôles entre administration technique (SISR) et gestion de contenu.
       </p>
       <p>
-        Le coût du projet : 1 750€ pour 2 jours de formation WordPress
+        Coût du projet : 1 750 EUR pour 2 jours de formation WordPress.
       </p>
       <p>
-        Le planning :
+        Le planning de déploiement :
         <img src="images/intranet/planning intra.png" style="max-width: 100%; height: auto;" alt="Planning Intranet">
       </p>
 
-      <h2>Développement</h2>
+      <h2>Déploiement technique et administration</h2>
       <p>
-          J’ai profité de ce projet pour me former à l’outil WordPress, ce qui m’a permis de mieux comprendre ses fonctionnalités et de l’exploiter efficacement afin d’améliorer la visibilité et l’ergonomie du nouvel intranet.
+          Ce projet m'a permis d'approfondir des compétences directement liées au BTS SIO SISR : préparation d'un environnement de production, paramètres de sécurité, organisation des accès et maintien en condition opérationnelle.
       </p>
 
       <p>
-         J’ai commencé par transférer l’ensemble des documents présents sur l’ancien intranet vers la nouvelle plateforme. Ce travail de migration a nécessité une organisation rigoureuse pour garantir l’accessibilité et la cohérence des informations.
+         J'ai commencé par réaliser la migration des contenus depuis l'ancien intranet vers la nouvelle plateforme, avec une méthode rigoureuse pour garantir l'intégrité des données, la disponibilité des ressources et la cohérence des arborescences.
       </p>
 
       <p>
-         Ensuite, j’ai enrichi le site avec plusieurs modules essentiels :
+         J'ai ensuite mis en place des services applicatifs utiles aux agents, en veillant à leur intégration dans le SI :
       </p>
       <ul>
         <li>
-          Un <strong>annuaire</strong> du personnel, permettant à chaque agent de retrouver facilement les coordonnées et les informations utiles des collègues.
+          Un <strong>annuaire</strong> du personnel, permettant une consultation rapide des coordonnées internes avec une organisation claire des informations.
          <br><img src="images/intranet/annuaire intranet.png" alt="Aperçu de l'annuaire" style="max-width:50%; height:auto; margin-top: 1rem; display: block; margin: 1rem auto; height: auto;">
         </li>
         <li>
-         Un <strong>calendrier</strong> partagé pour la publication des événements internes, des réunions ou des actualités des services.
+         Un <strong>calendrier</strong> partagé pour centraliser les événements internes, les réunions et les communications interservices.
          <br><img src="images/intranet/agenda intranet.png" alt="Aperçu de l'agenda" style="max-width:50%; height:auto; margin-top: 1rem; display: block; margin: 1rem auto; height: auto;">
          </li>
         </ul>
 
       <p>
-         Pour faciliter la navigation, j’ai également intégré une <strong>fonction de recherche</strong> permettant aux utilisateurs de retrouver rapidement un document, un article ou une information spécifique.
+         Pour améliorer l'efficacité d'usage, j'ai intégré une <strong>fonction de recherche</strong> permettant d'accéder rapidement aux documents et informations critiques.
       </p>
 
       <p>
-         Enfin, j’ai rédigé et mis en ligne une centaine d’articles répartis par thématiques, correspondant aux besoins des différents services de la mairie (RH, communication, DGS, etc.), afin d’assurer un accès fluide et organisé à l’information.
+         Enfin, la structuration des contenus par thématique a permis de fiabiliser la diffusion de l'information et d'améliorer la qualité de service rendue aux utilisateurs internes.
       </p>
 
-      <h2>Phase de test</h2>
+      <h2>Recette technique et validation</h2>
       <p>
-        À la fin de mon développement, j’ai demandé à l’équipe projet de tester l’ensemble du site (liens, agenda, téléchargement, …) pour dénicher de potentielles erreurs et de s'assurer de son bon fonctionnement.
+        En fin de déploiement, j'ai piloté une phase de recette avec l'équipe projet pour vérifier le bon fonctionnement global : accès utilisateurs, liens, téléchargements, publications, affichage des modules et stabilité générale.
       </p>
-      <p>Voici un aperçu de la page d’accueil du nouvel intranet par rapport à l'ancien :</p>
+      <p>Voici un aperçu comparatif de la page d'accueil avant et après modernisation :</p>
         <div style="display: flex; justify-content: center; gap: 20px;">
         <img src="images/intranet/ancien accueil intranet.png" alt="Aperçu de l'ancien accueil" style="max-width:45%; height:auto;">
         <img src="images/intranet/accueil intranet.png" alt="Aperçu de l'accueil" style="max-width:45%; height:auto;">
         </div>
 
 
-      <h2>Évolutions possibles</h2>
+      <h2>Évolutions et exploitation continue</h2>
       <p>
-        Ce site a vocation à être un outil vivant, évolutif et utile à tous. Pour cela, il est essentiel que chaque service s’implique, en partageant ses actualités, ses ressources ou tout contenu pouvant bénéficier à l’ensemble de la collectivité.
+        Cet intranet est un service vivant qui doit évoluer avec les besoins des services. Dans une logique SISR, l'enjeu est de maintenir la plateforme à jour, de renforcer la sécurité en continu et de garantir la disponibilité des ressources publiées.
       </p>
-      <p>L’organisation pour la publication des contenus se déroule en deux étapes principales :</p>
+      <p>L'organisation de publication repose sur un circuit de validation clair :</p>
       <ul>
-        <li>Validation des informations : Avant de publier, il faut faire valider les éléments par la DGS si ces informations concernent des sujets importants comme le fonctionnement de la collectivité, une réorganisation, ou tout autre changement significatif.</li>
-        <li>Transmission et mise en ligne : Une fois validés, les informations doivent être transmises à un agent du service communication, qui se chargera de les publier sur le site.</li>
+        <li>Validation des informations : les contenus sensibles ou structurants sont vérifiés par la DGS avant diffusion.</li>
+        <li>Transmission et publication : le service communication publie les informations validées selon les règles définies.</li>
       </ul>
 
       <h2>Conclusion</h2>
-      <p>Ce projet de refonte de l’intranet a permis de répondre aux besoins de sécurité, de simplicité et d’évolutivité exprimés par la collectivité. La solution retenue, WordPress, offre une prise en main rapide et une grande flexibilité, tout en restant accessible aux utilisateurs non techniques.</p>
-      <p>Cette mission m’a permis de travailler en lien direct avec les différents services, d’analyser leurs besoins et de mettre en œuvre une solution concrète et adaptée. L’intranet est désormais un outil moderne, prêt à évoluer avec les usages de la mairie.</p>
+      <p>Ce projet démontre une démarche BTS SIO option SISR : analyser une infrastructure existante, proposer une solution techniquement viable, organiser son déploiement et en assurer l'exploitation sécurisée.</p>
+      <p>Au-delà de l'outil web, la valeur du projet repose sur la gestion des accès, la fiabilité du service, la coordination interservices et la capacité à maintenir une solution numérique dans le temps.</p>
       <h2>Compétences développées</h2>
       <div class="hero-stats" style="margin-top: 1.5rem;">
-        <div class="hero-stat"><strong>Gestion de projet</strong><br>Coordination et suivi</div>
-        <div class="hero-stat"><strong>WordPress</strong><br>Prise en main et paramétrage</div>
-        <div class="hero-stat"><strong>Services numériques</strong><br>Intégration d'outils utiles</div>
-        <div class="hero-stat"><strong>Analyse des besoins</strong><br>Écoute des utilisateurs</div>
-        <div class="hero-stat"><strong>Travail interservices</strong><br>Communication et validation</div>
+        <div class="hero-stat"><strong>Administration système</strong><br>Préparation et maintenance de l'environnement</div>
+        <div class="hero-stat"><strong>Sécurité informatique</strong><br>Gestion des accès et bonnes pratiques</div>
+        <div class="hero-stat"><strong>Services réseau</strong><br>Disponibilité et accès aux ressources internes</div>
+        <div class="hero-stat"><strong>MCO</strong><br>Supervision et continuité de service</div>
+        <div class="hero-stat"><strong>Gestion de projet technique</strong><br>Coordination, recette et accompagnement</div>
       </div>
     </main>
   </div>
