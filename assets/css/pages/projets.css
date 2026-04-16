@@ -128,6 +128,18 @@
       margin-bottom: 0.75rem;
     }
 
+    .project-group {
+      margin-bottom: 2.5rem;
+    }
+
+    .projects-group-title {
+      text-align: left;
+      padding: 0 2rem;
+      margin: 0 0 1.2rem;
+      font-size: 2rem;
+      color: #fff;
+    }
+
     /* ------------------------- */
     /* GRILLE DES PROJETS : 2 colonnes sur desktop, 1 sur mobile */
     /* ------------------------- */
@@ -163,6 +175,11 @@
       .projects-grid {
         grid-template-columns: 1fr;
       }
+    }
+
+    .projects-grid-single {
+      grid-template-columns: minmax(320px, 820px);
+      justify-content: center;
     }
 
     /*

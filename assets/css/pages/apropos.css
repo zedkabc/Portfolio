@@ -159,8 +159,7 @@
         }
 
         .skills-grid-4 {
-            /* Maintenant 3 colonnes pour correspondre à la première grille */
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             grid-auto-rows: 1fr;
         }
 

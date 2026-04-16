@@ -101,10 +101,14 @@ header.is-scrolled {
 
 nav {
   justify-content: flex-end;
+  gap: 0.35rem;
 }
 
 nav a {
   margin-right: 0 !important;
+  padding: 0.48rem 0.92rem !important;
+  font-size: 0.84rem;
+  letter-spacing: 0.02em;
   color: var(--site-text-muted);
   border-color: rgba(212, 175, 55, 0.18) !important;
   background: rgba(255, 255, 255, 0.02) !important;
