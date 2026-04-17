@@ -186,6 +186,49 @@ li a:hover {
     margin-bottom: 2rem;
 }
 
+.benchmark-section {
+    margin: 2.5rem 0 1rem;
+    text-align: left;
+}
+
+.benchmark-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.benchmark-table-wrap {
+    overflow-x: auto;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    background: rgba(8, 8, 8, 0.55);
+}
+
+.benchmark-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 740px;
+}
+
+.benchmark-table th,
+.benchmark-table td {
+    padding: 0.95rem 0.9rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    vertical-align: top;
+    line-height: 1.55;
+    color: #f2e4b0;
+    font-size: 0.98rem;
+}
+
+.benchmark-table th {
+    background: rgba(212, 175, 55, 0.12);
+    color: #ffffff;
+    text-align: left;
+}
+
+.benchmark-table tbody tr:hover {
+    background: rgba(212, 175, 55, 0.08);
+}
+
 .source-grid {
     display: flex;
     flex-wrap: wrap;

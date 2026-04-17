@@ -132,6 +132,10 @@
             margin-bottom: 1rem;
         }
 
+        .about-hero-badges {
+            margin: 1rem 0 2.4rem !important;
+        }
+
         /* --- SECTION COMPÉTENCES - ON S'ASSURE QU'IL EST TRANSPARENT --- */
         .skills-section {
             margin-bottom: 0; 
