@@ -28,12 +28,52 @@ body {
   isolation: isolate;
 }
 
+body.page-apropos {
+  background-image: url("../../images/apropos/fond-clair.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+body.page-entreprise {
+  background-image: url("../../images/entreprise/black-gold-glitter-background.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+body.page-projets,
+body.page-tableau-synthese {
+  background-image: url("../../images/projets/fond-d-illustration-de-texture-de-superposition-de-poussiere-doree.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+body.page-intranet {
+  background-image: url("../../images/intranet/fond-de-produit-marron.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
 body,
 button,
 input,
 textarea,
 select {
   font-family: "Montserrat", sans-serif;
+}
+
+iframe,
+video,
+canvas,
+svg {
+  max-width: 100%;
 }
 
 ::selection {
@@ -172,6 +212,7 @@ main,
   width: min(1180px, calc(100% - 2rem));
   margin-left: auto;
   margin-right: auto;
+  overflow-wrap: anywhere;
 }
 
 .content-wrapper,
@@ -485,6 +526,14 @@ footer a:focus-visible {
   .hero-actions,
   .project-tags {
     justify-content: center;
+  }
+
+  body.page-apropos,
+  body.page-entreprise,
+  body.page-projets,
+  body.page-tableau-synthese,
+  body.page-intranet {
+    background-attachment: scroll !important;
   }
 
 }

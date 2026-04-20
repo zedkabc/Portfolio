@@ -112,7 +112,7 @@
 
     /* Titre principal de la page : un peu plus grand et remonté */
     h1 {
-      font-size: 3.8rem; /* augmenté pour plus d'impact */
+      font-size: clamp(2rem, 6vw, 3.8rem); /* augmenté pour plus d'impact */
       margin-top: 0;     /* pas d'espace supplémentaire au-dessus */
       margin-bottom: 1.5rem; /* petit espacement sous le titre */
     }
@@ -136,7 +136,7 @@
       text-align: left;
       padding: 0 2rem;
       margin: 0 0 1.2rem;
-      font-size: 2rem;
+      font-size: clamp(1.4rem, 3vw, 2rem);
       color: #fff;
     }
 
@@ -146,9 +146,9 @@
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr 1fr; /* conserve 2 colonnes */
-      gap: 3rem; /* espacement entre cartes */
+      gap: clamp(1rem, 2.5vw, 3rem); /* espacement entre cartes */
       margin-bottom: 3rem;
-      padding: 0 2rem; /* respiration horizontale */
+      padding: 0 clamp(0.5rem, 2vw, 2rem); /* respiration horizontale */
       align-items: stretch; /* étire les items pour qu'ils aient la même hauteur */
     }
 
@@ -189,7 +189,7 @@
     */
     .project {
       border: 1px solid #d4af37;
-      padding: 2rem; /* espace intérieur autour du contenu */
+      padding: clamp(1rem, 2.5vw, 2rem); /* espace intérieur autour du contenu */
       border-radius: 20px;
       position: relative;
       background: rgba(0,0,0,0.3);
@@ -284,6 +284,15 @@
       footer {
         flex-direction: column;
         text-align: center;
+
+      .projects-group-title {
+        text-align: center;
+        padding: 0;
+      }
+
+      .project {
+        min-height: auto;
+      }
       }
       .footer-left,
       .footer-center,
