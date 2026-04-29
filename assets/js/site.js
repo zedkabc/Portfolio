@@ -104,6 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (disableScrollReveal || reducedMotion || !("IntersectionObserver" in window)) {
       revealTargets.forEach((item) => item.classList.add("is-visible"));
     } else {
+      const shouldRevealNow = (item) => {
+        const rect = item.getBoundingClientRect();
+        return rect.top < window.innerHeight * 0.85 && rect.bottom > 0;
+      };
+
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -119,7 +124,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       );
 
-      revealTargets.forEach((item) => observer.observe(item));
+      revealTargets.forEach((item) => {
+        if (shouldRevealNow(item)) {
+          item.classList.add("is-visible");
+        } else {
+          observer.observe(item);
+        }
+      });
     }
   }
 
